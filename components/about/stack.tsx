@@ -12,22 +12,16 @@ type Chip = {
 };
 
 const CHIPS: Chip[] = [
-  {
-    label: "Figma",
-    slug: "figma",
-    bg: "#1f1f1f",
-    fg: "#ffffff",
-    iconUrl: "https://svgl.app/library/figma.svg",
-  },
+  { label: "JavaScript", slug: "javascript", bg: "#F7DF1E", fg: "#0a0a0a" },
   { label: "React", slug: "react", bg: "#1FB6CB", fg: "#ffffff" },
-  { label: "Next.js", slug: "nextdotjs", bg: "#1f1f1f", fg: "#ffffff" },
-  { label: "TypeScript", slug: "typescript", bg: "#2F74C0", fg: "#ffffff" },
-  { label: "shadcn/ui", slug: "shadcnui", bg: "#5b54ff", fg: "#ffffff" },
-  { label: "Cursor", slug: "cursor", bg: "#111111", fg: "#ffffff" },
-  { label: "GSAP", slug: "gsap", bg: "#0AE448", fg: "#0a0a0a" },
-  { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
-  { label: "Vercel", slug: "vercel", bg: "#0a0a0a", fg: "#ffffff" },
+  { label: "Vite", slug: "vite", bg: "#646CFF", fg: "#ffffff" },
   { label: "Tailwind CSS", slug: "tailwindcss", bg: "#2BBCF5", fg: "#ffffff" },
+  { label: "Express", slug: "express", bg: "#1f1f1f", fg: "#ffffff" },
+  { label: "MongoDB", slug: "mongodb", bg: "#47A248", fg: "#ffffff" },
+  { label: "Supabase", slug: "supabase", bg: "#3FCF8E", fg: "#0a0a0a" },
+  { label: "Firebase", slug: "firebase", bg: "#1f1f1f", fg: "#ffffff" },
+  { label: "Vercel", slug: "vercel", bg: "#0a0a0a", fg: "#ffffff" },
+  { label: "Netlify", slug: "netlify", bg: "#00C7B7", fg: "#ffffff" },
 ];
 
 const CHIP_RADIUS = 14;
