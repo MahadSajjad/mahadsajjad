@@ -21,14 +21,14 @@ export function Hero(): ReactNode {
             <h1 className="flex flex-col text-[2.75rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[2.5rem] lg:text-[3.65rem]">
               <span className="whitespace-nowrap">Web & App</span>
               <RotatingText
-                texts={["developer", "designer", "engineer", "builder"]}
-                mainClassName="w-fit justify-center overflow-hidden rounded-lg px-2 py-0.5 text-foreground sm:px-2 md:px-3 md:py-1"
+                texts={["Developer", "Designer", "Engineer" ]}
+                mainClassName="w-fit justify-center overflow-hidden rounded-lg py-0.5 text-foreground md:py-1"
                 staggerFrom="last"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 exit={{ y: "-120%" }}
                 staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                splitLevelClassName="overflow-hidden pb-1.5 sm:pb-2 md:pb-2.5"
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={4000}
                 splitBy="characters"
