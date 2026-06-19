@@ -38,7 +38,7 @@ export function Hero(): ReactNode {
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              BSCS student and MERN stack developer. I ship real full-stack
+              BSCS student and full-stack developer. I ship real full-stack
               products, not tutorials.
             </p>
 

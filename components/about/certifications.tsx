@@ -9,29 +9,24 @@ type Entry = {
 
 const ENTRIES: Entry[] = [
   {
-    title: "BS in Computer Science",
-    org: "Lyallpur Institute",
-    period: "2024 – 2028",
+    title: "Web and Mobile App Developer Course",
+    org: "SMIT Faisalabad",
+    period: "1 Year",
   },
   {
-    title: "Intermediate in ICS",
-    org: "GGCSF, Faisalabad",
-    period: "2022 – 2024",
-  },
-  {
-    title: "Matric in Computer Science",
-    org: "Spirit School, Faisalabad",
-    period: "2020 – 2022",
+    title: "Professional Training Program in MERN Stack",
+    org: "Codevpk",
+    period: "3 Months",
   },
 ];
 
 const ROW_HEIGHT = 64;
 
-export function Education(): ReactNode {
+export function Certifications(): ReactNode {
   return (
     <div className="flex flex-col gap-3">
       <h3 className="text-foreground text-[15px] font-semibold tracking-tight">
-        Education
+        Certifications
       </h3>
       <div className="border-foreground/5 bg-foreground/2 dark:bg-foreground/5 relative rounded-4xl border p-2 sm:p-4">
         <ul className="flex flex-col gap-2">
@@ -41,7 +36,7 @@ export function Education(): ReactNode {
               className="bg-background border-foreground/5 flex items-center gap-4 rounded-3xl border p-2"
               style={{ minHeight: ROW_HEIGHT }}
             >
-              <SchoolLogo entry={entry} />
+              <CertLogo entry={entry} />
               <div className="flex min-w-0 flex-col">
                 <span className="text-foreground text-[17px] font-semibold tracking-tight sm:text-[18px]">
                   {entry.title}
@@ -60,8 +55,8 @@ export function Education(): ReactNode {
   );
 }
 
-function SchoolLogo({ entry }: { entry: Entry }): ReactNode {
-  const initials = entry.title.charAt(0);
+function CertLogo({ entry }: { entry: Entry }): ReactNode {
+  const initials = entry.org.charAt(0);
   return (
     <span
       className="border-foreground/15 inline-flex h-12 w-12 shrink-0 items-center justify-center border"

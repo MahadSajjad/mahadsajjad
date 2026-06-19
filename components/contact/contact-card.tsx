@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -42,19 +42,19 @@ export function ContactCard(): ReactNode {
               <div className="border-foreground/8 flex flex-col items-center justify-center gap-6 rounded-[1.1rem] border bg-background p-6 sm:p-8">
                 <div className="flex items-center gap-3 opacity-75">
                   <SocialIcon
-                    href="mailto:hello@example.com"
+                    href="mailto:web.mahadsajjad@gmail.com"
                     label="Email"
                     lucideIcon={Mail}
                   />
                   <SocialIcon
-                    href="https://www.linkedin.com"
-                    label="LinkedIn"
-                    imageSrc="/linkedin.svg"
+                    href="https://www.instagram.com/mahadvizz/"
+                    label="Instagram"
+                    lucideIcon={Instagram}
                   />
                   <SocialIcon
-                    href="https://x.com"
-                    label="X"
-                    imageSrc="/x.svg"
+                    href="https://www.linkedin.com/in/mahad-sajjad-b34826337/"
+                    label="LinkedIn"
+                    imageSrc="/linkedin.svg"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 text-center">
