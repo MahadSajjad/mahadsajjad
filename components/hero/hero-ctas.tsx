@@ -1,5 +1,6 @@
 "use client";
 
+
 import { ArrowRight } from "lucide-react";
 import { LayoutGroup, motion } from "motion/react";
 import Link from "next/link";
