@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
+        suppressHydrationWarning
       >
         <Providers>
           <div className="site-frame site-frame--top" aria-hidden="true" />
