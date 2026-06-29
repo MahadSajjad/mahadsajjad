@@ -18,7 +18,8 @@ function SplashCursor({
   TRANSPARENT = true,
   RAINBOW_MODE = true,
   COLOR = '#ff0000',
-  LIGHT_MODE = false
+  LIGHT_MODE = false,
+  OPACITY = 1
 }) {
   const canvasRef = useRef(null);
 
@@ -309,7 +310,7 @@ function SplashCursor({
 
           float a = max(c.r, max(c.g, c.b));
           #ifdef LIGHT_MODE
-              gl_FragColor = vec4(vec3(0.0), min(a * 8.0, 1.0));
+              gl_FragColor = vec4(vec3(0.0), min(a * 2.5, 1.0));
           #else
               gl_FragColor = vec4(c, a);
           #endif
@@ -1043,7 +1044,7 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
+    <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full" style={{ opacity: OPACITY }}>
       <canvas ref={canvasRef} id="fluid" className="w-screen h-screen block" />
     </div>
   );
