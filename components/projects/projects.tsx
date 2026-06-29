@@ -35,6 +35,17 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    id: "al-fajr",
+    icon: Moon,
+    iconLabel: "Al Fajr",
+    title: "A focused product shipped for a real client.",
+    description:
+      "An end-to-end build delivered for a real business, from data model to deployment.",
+    meta: "Full-stack · MERN",
+    image: alFajr,
+    imageAlt: "Al Fajr project",
+  },
+  {
     id: "pos",
     icon: ScanBarcode,
     iconLabel: "POS System",
@@ -45,6 +56,7 @@ const PROJECTS: Project[] = [
     image: pos,
     imageAlt: "POS system dashboard",
   },
+
   {
     id: "getsetproperties",
     icon: Building2,
@@ -55,39 +67,6 @@ const PROJECTS: Project[] = [
     meta: "Full-stack · MERN",
     image: getSetProperties,
     imageAlt: "Get Set Properties real-estate platform",
-  },
-  {
-    id: "fashionthread",
-    icon: ShoppingBag,
-    iconLabel: "Fashion Thread",
-    title: "An e-commerce experience for a fashion brand.",
-    description:
-      "Product browsing, cart, and checkout for a fashion store, with a focus on a fast, considered shopping flow.",
-    meta: "Full-stack · MERN",
-    image: fashionThread,
-    imageAlt: "Fashion Thread e-commerce store",
-  },
-  {
-    id: "aureolea",
-    icon: Sparkles,
-    iconLabel: "Aureolea",
-    title: "A storefront for a beauty and skincare brand.",
-    description:
-      "A polished brand storefront with product catalog and checkout, designed to feel premium and calm.",
-    meta: "Full-stack · MERN",
-    image: aureolea,
-    imageAlt: "Aureolea beauty brand storefront",
-  },
-  {
-    id: "nutrista",
-    icon: Salad,
-    iconLabel: "Nutrista",
-    title: "A nutrition and diet-tracking platform.",
-    description:
-      "A platform for planning and tracking nutrition, turning daily intake into a clear, readable picture.",
-    meta: "Full-stack · MERN",
-    image: nutrista,
-    imageAlt: "Nutrista nutrition platform",
   },
   {
     id: "transiqi",
@@ -101,15 +80,37 @@ const PROJECTS: Project[] = [
     imageAlt: "Transiqi logistics dashboard",
   },
   {
-    id: "al-fajr",
-    icon: Moon,
-    iconLabel: "Al Fajr",
-    title: "A focused product shipped for a real client.",
+    id: "fashionthread",
+    icon: ShoppingBag,
+    iconLabel: "Fashion Thread",
+    title: "An e-commerce experience for a fashion brand.",
     description:
-      "An end-to-end build delivered for a real business, from data model to deployment.",
+      "Product browsing, cart, and checkout for a fashion store, with a focus on a fast, considered shopping flow.",
     meta: "Full-stack · MERN",
-    image: alFajr,
-    imageAlt: "Al Fajr project",
+    image: fashionThread,
+    imageAlt: "Fashion Thread e-commerce store",
+  },
+  {
+    id: "nutrista",
+    icon: Salad,
+    iconLabel: "Nutrista",
+    title: "A nutrition and diet-tracking platform.",
+    description:
+      "A platform for planning and tracking nutrition, turning daily intake into a clear, readable picture.",
+    meta: "Full-stack · MERN",
+    image: nutrista,
+    imageAlt: "Nutrista nutrition platform",
+  },
+  {
+    id: "aureolea",
+    icon: Sparkles,
+    iconLabel: "Aureolea",
+    title: "A storefront for a beauty and skincare brand.",
+    description:
+      "A polished brand storefront with product catalog and checkout, designed to feel premium and calm.",
+    meta: "Full-stack · MERN",
+    image: aureolea,
+    imageAlt: "Aureolea beauty brand storefront",
   },
 ];
 

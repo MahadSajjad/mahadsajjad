@@ -1,5 +1,6 @@
 import { ContactCard } from "@/components/contact/contact-card";
 import { Projects } from "@/components/projects/projects";
+import { ProjectsGallery } from "@/components/projects/projects-gallery";
 import { FadeIn } from "@/components/ui/motion-primitives";
 import { createMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
@@ -24,6 +25,7 @@ export default function ProjectsPage(): ReactNode {
           </p>
         </FadeIn>
       </section>
+      <ProjectsGallery />
       <Projects />
       <ContactCard />
       <div className="h-12 sm:h-16" />
