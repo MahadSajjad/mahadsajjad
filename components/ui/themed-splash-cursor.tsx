@@ -21,10 +21,11 @@ export function ThemedSplashCursor() {
       RAINBOW_MODE={false}
       COLOR="#ffffff"
       LIGHT_MODE={isLight}
-      DENSITY_DISSIPATION={2}
-      VELOCITY_DISSIPATION={0.4}
-      SPLAT_RADIUS={0.35}
-      SPLAT_FORCE={2000}
+      OPACITY={isLight ? 0.18 : 0.28}
+      DENSITY_DISSIPATION={5}
+      VELOCITY_DISSIPATION={2}
+      SPLAT_RADIUS={0.3}
+      SPLAT_FORCE={2500}
       CURL={0}
       PRESSURE={0.8}
       PRESSURE_ITERATIONS={30}
