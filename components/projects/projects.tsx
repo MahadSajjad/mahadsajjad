@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   Building2,
+  Globe,
   Moon,
   ScanBarcode,
   ShoppingBag,
@@ -18,6 +19,7 @@ import alFajr from "./images/al-fajr.png";
 import aureolea from "./images/aureolea.png";
 import fashionThread from "./images/fashionthread.png";
 import getSetProperties from "./images/getsetproperties.png";
+import metafessional from "./images/Metafessional.png";
 import nutrista from "./images/nutrista.png";
 import pos from "./images/pos.png";
 import transiqi from "./images/transiqi.png";
@@ -56,7 +58,6 @@ const PROJECTS: Project[] = [
     image: pos,
     imageAlt: "POS system dashboard",
   },
-
   {
     id: "getsetproperties",
     icon: Building2,
@@ -80,6 +81,17 @@ const PROJECTS: Project[] = [
     imageAlt: "Transiqi logistics dashboard",
   },
   {
+    id: "metafessional",
+    icon: Globe,
+    iconLabel: "Metafessional",
+    title: "My own agency — designed and built from scratch.",
+    description:
+      "The public-facing website for my agency, Metafessional. Designed and shipped end-to-end to represent the brand and bring in clients.",
+    meta: "Frontend · Next.js",
+    image: metafessional,
+    imageAlt: "Metafessional company website",
+  },
+  {
     id: "fashionthread",
     icon: ShoppingBag,
     iconLabel: "Fashion Thread",
@@ -90,6 +102,8 @@ const PROJECTS: Project[] = [
     image: fashionThread,
     imageAlt: "Fashion Thread e-commerce store",
   },
+
+
   {
     id: "nutrista",
     icon: Salad,
@@ -112,6 +126,7 @@ const PROJECTS: Project[] = [
     image: aureolea,
     imageAlt: "Aureolea beauty brand storefront",
   },
+
 ];
 
 export type ProjectsProps = {
@@ -134,8 +149,7 @@ export function Projects({
               My projects
             </h2>
             <p className="max-w-[33ch] text-[18px] leading-[1.45] tracking-tight text-foreground/65 sm:text-[20px]">
-              From playful experiments to thoughtful systems, a look at the
-              work I&rsquo;m proud to have shipped.
+              Products I&rsquo;ve designed, built, and shipped for real clients and users.
             </p>
           </FadeIn>
         ) : null}

@@ -7,6 +7,7 @@ import alFajr from './images/al-fajr.png';
 import aureolea from './images/aureolea.png';
 import fashionThread from './images/fashionthread.png';
 import getSetProperties from './images/getsetproperties.png';
+import metafessional from './images/Metafessional.png';
 import nutrista from './images/nutrista.png';
 import pos from './images/pos.png';
 import transiqi from './images/transiqi.png';
@@ -19,6 +20,7 @@ const GALLERY_ITEMS = [
   { image: nutrista.src, text: 'Nutrista' },
   { image: transiqi.src, text: 'Transiqi' },
   { image: alFajr.src, text: 'Al Fajr' },
+  { image: metafessional.src, text: 'Metafessional' },
 ];
 
 export function ProjectsGallery() {
