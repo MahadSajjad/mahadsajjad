@@ -1040,7 +1040,8 @@ function SplashCursor({
     TRANSPARENT,
     RAINBOW_MODE,
     COLOR,
-    LIGHT_MODE
+    LIGHT_MODE,
+    OPACITY
   ]);
 
   return (
