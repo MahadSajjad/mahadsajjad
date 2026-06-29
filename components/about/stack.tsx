@@ -22,6 +22,8 @@ const CHIPS: Chip[] = [
   { label: "Firebase", slug: "firebase", bg: "#1f1f1f", fg: "#ffffff" },
   { label: "Vercel", slug: "vercel", bg: "#0a0a0a", fg: "#ffffff" },
   { label: "Netlify", slug: "netlify", bg: "#00C7B7", fg: "#ffffff" },
+  { label: "Git", slug: "git", bg: "#F05133", fg: "#ffffff" },
+  { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
 ];
 
 const CHIP_RADIUS = 14;

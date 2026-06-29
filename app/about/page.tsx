@@ -27,17 +27,42 @@ export default function AboutPage(): ReactNode {
         <FadeIn delay={0.5}>
           <div className="rounded-4xl border border-foreground/5 bg-foreground/1.5 p-8 sm:p-12 dark:bg-foreground/3">
             <h1 className="font-serif text-[1.75rem] font-medium tracking-tight text-foreground sm:text-[2rem]">
-              Hello! I&rsquo;m <span className="border-b border-foreground/30 pb-0.5">Josh Mercer</span>.
+              I&rsquo;m{" "}
+              <span className="border-b border-foreground/30 pb-0.5">
+                Mahad Sajjad
+              </span>
             </h1>
             <div className="mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight text-foreground/75 sm:text-[18px]">
               <p>
-                A <strong className="font-semibold text-foreground">product designer and frontend engineer</strong> passionate about building intuitive, human-centered digital experiences. With a background in <strong className="font-semibold text-foreground">visual craft</strong> and <strong className="font-semibold text-foreground">interaction design</strong>, I bring a unique blend of design thinking and technical execution to every project.
+                A{" "}
+                <strong className="font-semibold text-foreground">
+                  full-stack developer
+                </strong>{" "}
+                who builds products end-to-end, from database to deployment. I
+                got into development because I wanted to build things that
+                actually work — not just look good in a demo. That meant
+                learning the full stack: not just the frontend layer everyone
+                sees, but the architecture, the APIs, the edge cases, and the
+                decisions that make a product hold up under real use.
               </p>
               <p>
-                My journey into design began when I realized how often good user experience was missing from powerful tools. That led me to embrace <strong className="font-semibold text-foreground">user-centered design</strong> as both a mindset and a craft, one that balances clarity, creativity, and functionality.
+                Most of my work has been{" "}
+                <strong className="font-semibold text-foreground">solo</strong>{" "}
+                — which means I own every decision, every tradeoff, every
+                deadline. Product thinking, technical execution, client
+                communication — all of it. That's made me a better developer
+                than any tutorial could.
               </p>
               <p>
-                Currently leading design at small product teams shipping software for <strong className="font-semibold text-foreground">creative professionals</strong>, I&rsquo;m always looking for opportunities to <strong className="font-semibold text-foreground">shape thoughtful interfaces and build scalable design systems</strong>.
+                I specialize in{" "}
+                <strong className="font-semibold text-foreground">
+                  MERN stack
+                </strong>{" "}
+                and have shipped{" "}
+                <strong className="font-semibold text-foreground">
+                  SaaS platforms, POS systems, and dashboards
+                </strong>{" "}
+                for real businesses with real users.
               </p>
             </div>
           </div>
