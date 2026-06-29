@@ -1,9 +1,26 @@
-import { ArrowRight, Bot, Compass, Layers, LineChart, Sparkles, Wand2, } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Moon,
+  ScanBarcode,
+  ShoppingBag,
+  Salad,
+  Sparkles,
+  Truck,
+} from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/ui/motion-primitives";
+
+import alFajr from "./images/al-fajr.png";
+import aureolea from "./images/aureolea.png";
+import fashionThread from "./images/fashionthread.png";
+import getSetProperties from "./images/getsetproperties.png";
+import nutrista from "./images/nutrista.png";
+import pos from "./images/pos.png";
+import transiqi from "./images/transiqi.png";
 
 type Project = {
   id: string;
@@ -12,92 +29,87 @@ type Project = {
   title: string;
   description: string;
   meta: string;
-  imageRatio: number;
-  image: string;
+  image: StaticImageData;
   imageAlt: string;
 };
 
 const PROJECTS: Project[] = [
   {
-    id: "loom",
+    id: "pos",
+    icon: ScanBarcode,
+    iconLabel: "POS System",
+    title: "A point-of-sale system with barcode-driven checkout.",
+    description:
+      "A full POS built around EAN-13 barcode architecture, with discount, tax, and bulk operations handled end-to-end.",
+    meta: "Full-stack · MERN",
+    image: pos,
+    imageAlt: "POS system dashboard",
+  },
+  {
+    id: "getsetproperties",
+    icon: Building2,
+    iconLabel: "Get Set Properties",
+    title: "A property listing and management platform.",
+    description:
+      "A real-estate platform for browsing, listing, and managing properties with search, filters, and a clean dashboard.",
+    meta: "Full-stack · MERN",
+    image: getSetProperties,
+    imageAlt: "Get Set Properties real-estate platform",
+  },
+  {
+    id: "fashionthread",
+    icon: ShoppingBag,
+    iconLabel: "Fashion Thread",
+    title: "An e-commerce experience for a fashion brand.",
+    description:
+      "Product browsing, cart, and checkout for a fashion store, with a focus on a fast, considered shopping flow.",
+    meta: "Full-stack · MERN",
+    image: fashionThread,
+    imageAlt: "Fashion Thread e-commerce store",
+  },
+  {
+    id: "aureolea",
     icon: Sparkles,
-    iconLabel: "LOOM",
-    title:
-      "An AI writing companion that thinks alongside you, allowing you to capture ideas, edits, and drafts in one focused space.",
+    iconLabel: "Aureolea",
+    title: "A storefront for a beauty and skincare brand.",
     description:
-      "I designed Loom, a focused writing surface where ideas, edits, and drafts coexist without the chat clutter.",
-    meta: "Design Engineer, 2024",
-    imageRatio: 752 / 497,
-    image:
-      "https://cdn.dribbble.com/userupload/46128964/file/b92b9d268dd928642ca94bd49e32923a.jpg?resize=752x497&vertical=center",
-    imageAlt: "Loom AI writing companion mockup",
+      "A polished brand storefront with product catalog and checkout, designed to feel premium and calm.",
+    meta: "Full-stack · MERN",
+    image: aureolea,
+    imageAlt: "Aureolea beauty brand storefront",
   },
   {
-    id: "atlas",
-    icon: Compass,
-    iconLabel: "Atlas Studio",
-    title: "A two week brand and product sprint for a creative studio.",
+    id: "nutrista",
+    icon: Salad,
+    iconLabel: "Nutrista",
+    title: "A nutrition and diet-tracking platform.",
     description:
-      "End to end identity, marketing site, and a small product surface designed to feel quietly confident across every touchpoint.",
-    meta: "Product & Brand Designer, 2025",
-    imageRatio: 1024 / 768,
-    image:
-      "https://cdn.dribbble.com/userupload/24599416/file/original-1ae5075dcd129aebb16bdbca24b41ac7.png?resize=1024x768&vertical=center",
-    imageAlt: "Atlas Studio brand and product sprint mockup",
+      "A platform for planning and tracking nutrition, turning daily intake into a clear, readable picture.",
+    meta: "Full-stack · MERN",
+    image: nutrista,
+    imageAlt: "Nutrista nutrition platform",
   },
   {
-    id: "rhythm",
-    icon: LineChart,
-    iconLabel: "Rhythm",
-    title: "Calm analytics for indie founders.",
+    id: "transiqi",
+    icon: Truck,
+    iconLabel: "Transiqi",
+    title: "A transport and logistics management tool.",
     description:
-      "A weekly digest that turns raw product data into a simple narrative. Built so you can read it on a Sunday with coffee.",
-    meta: "Founder & Designer, 2024",
-    imageRatio: 1024 / 768,
-    image:
-      "https://cdn.dribbble.com/userupload/47357856/file/75841fa59f32f05ca6c5ddf02d08dfe6.png?resize=1024x768&vertical=center",
-    imageAlt: "Rhythm calm analytics mockup",
+      "A dashboard for managing transport operations, built to keep moving parts organized and easy to act on.",
+    meta: "Full-stack · MERN",
+    image: transiqi,
+    imageAlt: "Transiqi logistics dashboard",
   },
   {
-    id: "groove",
-    icon: Wand2,
-    iconLabel: "Groove",
-    title:
-      "Reimagining the booking flow for a music school, asisting thousands of students in finding the right lessons.",
+    id: "al-fajr",
+    icon: Moon,
+    iconLabel: "Al Fajr",
+    title: "A focused product shipped for a real client.",
     description:
-      "I led a redesign of the lesson booking experience, cutting drop off in half and making the schedule feel like a calendar people actually want to open.",
-    meta: "Lead Designer, 2023",
-    imageRatio: 1024 / 768,
-    image:
-      "https://cdn.dribbble.com/userupload/43955214/file/original-d4cde1de803e84b97d8892e3444c04b0.png?resize=1024x768&vertical=center",
-    imageAlt: "Groove music school booking flow mockup",
-  },
-  {
-    id: "fieldnote",
-    icon: Layers,
-    iconLabel: "Fieldnote",
-    title:
-      "A pocket sized research tool for design teams that want to get out of their docs and into the world.",
-    description:
-      "Capture quotes, tag patterns, and synthesize themes in one place. The interface stays out of the way so the thinking can happen.",
-    meta: "Design Engineer, 2024",
-    imageRatio: 1024 / 768,
-    image:
-      "https://cdn.dribbble.com/userupload/30310902/file/original-621e7fe47be9d11ee14544456c693bec.png?resize=1024x768&vertical=center",
-    imageAlt: "Fieldnote pocket sized research tool mockup",
-  },
-  {
-    id: "talkback",
-    icon: Bot,
-    iconLabel: "Talkback",
-    title: "A friendlier interface for talking to language models.",
-    description:
-      "An exploration of how AI chat could feel less like a terminal and more like a conversation with a curious friend.",
-    meta: "Independent Project, 2025",
-    imageRatio: 1024 / 768,
-    image:
-      "https://cdn.dribbble.com/userupload/16560717/file/original-c6f745d50302d66609bfe080f99f5396.png?resize=1024x768&vertical=center",
-    imageAlt: "Talkback friendlier AI chat interface mockup",
+      "An end-to-end build delivered for a real business, from data model to deployment.",
+    meta: "Full-stack · MERN",
+    image: alFajr,
+    imageAlt: "Al Fajr project",
   },
 ];
 
@@ -113,7 +125,7 @@ export function Projects({
   const items = viewMoreVisible ? PROJECTS.slice(0, 4) : PROJECTS;
 
   return (
-    <section className="relative w-full"> 
+    <section className="relative w-full">
       <div className="mx-auto w-full max-w-275 px-6 sm:px-10">
         {withHeadline ? (
           <FadeIn className="flex flex-col items-center gap-5 pt-12 pb-10 text-center sm:pt-20 sm:pb-14">
@@ -121,7 +133,8 @@ export function Projects({
               My projects
             </h2>
             <p className="max-w-[33ch] text-[18px] leading-[1.45] tracking-tight text-foreground/65 sm:text-[20px]">
-              Every piece of work here has been designed, built, and shipped by me for real clients, real users, and real problems.
+              From playful experiments to thoughtful systems, a look at the
+              work I&rsquo;m proud to have shipped.
             </p>
           </FadeIn>
         ) : null}
@@ -176,7 +189,7 @@ function ProjectCard({
 
         <div
           className="project-card__image ring-foreground/5 relative w-full overflow-hidden rounded-2xl bg-foreground/5 ring-1"
-          style={{ aspectRatio: project.imageRatio }}
+          style={{ aspectRatio: project.image.width / project.image.height }}
         >
           <div className="project-card__image-inner">
             <Image

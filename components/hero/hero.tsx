@@ -3,10 +3,9 @@ import type { ReactNode } from "react";
 import { HeroCtas } from "./hero-ctas";
 import { FadeIn, ScaleUnblur } from "@/components/ui/motion-primitives";
 import { RotatingText } from "@/components/ui/rotating-text";
-import { PortraitMorph } from "./portrait-morph";
+import TiltedCard from "./TiltedCard";
 
 const PORTRAIT_SRC = "/josh.webp";
-const PORTRAIT_HOVER_SRC = "/josh_wave.webp";
 
 export function Hero(): ReactNode {
   return (
@@ -45,14 +44,20 @@ export function Hero(): ReactNode {
           </FadeIn>
 
           <ScaleUnblur className="flex justify-stretch md:justify-end">
-            <div className="relative aspect-square w-full md:max-w-105 overflow-hidden rounded-4xl border border-foreground/8 bg-background p-1.5 shadow-sm">
-              <div className="relative h-full w-full overflow-hidden rounded-[1.6rem]">
-                <PortraitMorph
-                  srcA={PORTRAIT_SRC}
-                  srcB={PORTRAIT_HOVER_SRC}
-                  alt="Josh portrait"
-                />
-              </div>
+            <div className="relative aspect-square w-full md:max-w-105">
+              <TiltedCard
+                imageSrc={PORTRAIT_SRC}
+                altText="mahad portrait"
+                containerHeight="100%"
+                containerWidth="100%"
+                imageHeight="100%"
+                imageWidth="100%"
+                rotateAmplitude={12}
+                scaleOnHover={1.05}
+                showMobileWarning={false}
+                showTooltip={false}
+                imageClassName="grayscale contrast-110 brightness-90 sepia-[0.15] dark:brightness-75 dark:contrast-125"
+              />
             </div>
           </ScaleUnblur>
         </div>
