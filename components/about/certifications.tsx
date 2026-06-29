@@ -9,7 +9,7 @@ type Entry = {
 
 const ENTRIES: Entry[] = [
   {
-    title: "Web and Mobile App Developer Course",
+    title: "Web and Mobile App Developement Course",
     org: "SMIT Faisalabad",
     period: "1 Year",
   },

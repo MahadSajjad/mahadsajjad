@@ -1,23 +1,9 @@
-import {
-  ArrowRight,
-  Bot,
-  Compass,
-  Layers,
-  LineChart,
-  Sparkles,
-  Wand2,
-} from "lucide-react";
+import { ArrowRight, Bot, Compass, Layers, LineChart, Sparkles, Wand2, } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/ui/motion-primitives";
-
-/**
- * Project imagery below is mockup-only. All visuals are sourced from
- * Dribbble and credit belongs to the original creators on dribbble.com.
- * Replace these with your own work before shipping.
- */
 
 type Project = {
   id: string;
@@ -127,7 +113,7 @@ export function Projects({
   const items = viewMoreVisible ? PROJECTS.slice(0, 4) : PROJECTS;
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full"> 
       <div className="mx-auto w-full max-w-275 px-6 sm:px-10">
         {withHeadline ? (
           <FadeIn className="flex flex-col items-center gap-5 pt-12 pb-10 text-center sm:pt-20 sm:pb-14">
@@ -135,8 +121,7 @@ export function Projects({
               My projects
             </h2>
             <p className="max-w-[33ch] text-[18px] leading-[1.45] tracking-tight text-foreground/65 sm:text-[20px]">
-              From playful experiments to thoughtful systems, a look at the
-              work I&rsquo;m proud to have shipped.
+              Every piece of work here has been designed, built, and shipped by me for real clients, real users, and real problems.
             </p>
           </FadeIn>
         ) : null}

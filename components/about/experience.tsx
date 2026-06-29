@@ -12,7 +12,7 @@ type Entry = {
 const ENTRIES: Entry[] = [
   {
     company: "Codev Inc",
-    role: "MERN Stack Developer",
+    role: "MERN Stack",
     period: "3 months",
     description:
       "A MERN stack training where I handled several light projects while learning new things.",
@@ -21,14 +21,14 @@ const ENTRIES: Entry[] = [
   {
     company: "MBM Services",
     role: "Project-Based Developer",
-    period: "3 months",
+    period: "4 months",
     description:
       "Bridged coding theory with hands-on practice in a real work setting, and learned which design patterns get used most often.",
     brand: "#0AA06E",
   },
 ];
 
-const TOTAL = "6 months";
+const TOTAL = "7 months";
 
 export function Experience(): ReactNode {
   return (
