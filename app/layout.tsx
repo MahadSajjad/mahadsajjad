@@ -1,6 +1,7 @@
 import { Nav } from "@/components/layout/nav";
 import { PageBackdrop } from "@/components/layout/page-backdrop";
 import { Providers } from "@/components/layout/providers";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { SkipToContent } from "@/components/layout/skip-to-content";
 import { ThemedSplashCursor } from "@/components/ui/themed-splash-cursor";
 import { baseMetadata } from "@/lib/metadata";
@@ -52,6 +53,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Providers>
+          <ScrollToTop />
           <ThemedSplashCursor />
           <div className="site-frame site-frame--top" aria-hidden="true" />
           <div className="site-frame site-frame--left" aria-hidden="true" />
