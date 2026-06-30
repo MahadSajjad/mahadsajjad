@@ -52,7 +52,7 @@ export function Hero(): ReactNode {
                 containerWidth="100%"
                 imageHeight="100%"
                 imageWidth="100%"
-                rotateAmplitude={12}
+                rotateAmplitude={5}
                 scaleOnHover={1.05}
                 showMobileWarning={false}
                 showTooltip={false}

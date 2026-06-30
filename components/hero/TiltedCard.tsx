@@ -1,12 +1,12 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 
 const springValues = {
-  damping: 30,
-  stiffness: 100,
-  mass: 2
+  damping: 60,
+  stiffness: 40,
+  mass: 4
 };
 
 interface TiltedCardProps {
@@ -55,7 +55,7 @@ export default function TiltedCard({
     mass: 1
   });
 
-  const [lastY, setLastY] = useState(0);
+  const lastYRef = useRef(0);
 
   function handleMouse(e: React.MouseEvent<HTMLElement>) {
     if (!ref.current) return;
@@ -64,8 +64,8 @@ export default function TiltedCard({
     const offsetX = e.clientX - rect.left - rect.width / 2;
     const offsetY = e.clientY - rect.top - rect.height / 2;
 
-    const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude;
-    const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude;
+    const rotationX = Math.max(-rotateAmplitude, Math.min(rotateAmplitude, (offsetY / (rect.height / 2)) * -rotateAmplitude));
+    const rotationY = Math.max(-rotateAmplitude, Math.min(rotateAmplitude, (offsetX / (rect.width / 2)) * rotateAmplitude));
 
     rotateX.set(rotationX);
     rotateY.set(rotationY);
@@ -73,9 +73,9 @@ export default function TiltedCard({
     x.set(e.clientX - rect.left);
     y.set(e.clientY - rect.top);
 
-    const velocityY = offsetY - lastY;
-    rotateFigcaption.set(-velocityY * 0.6);
-    setLastY(offsetY);
+    const velocityY = offsetY - lastYRef.current;
+    rotateFigcaption.set(-velocityY * 0.2);
+    lastYRef.current = offsetY;
   }
 
   function handleMouseEnter() {
