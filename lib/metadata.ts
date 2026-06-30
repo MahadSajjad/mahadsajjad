@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "BSCS student and MERN stack developer. I ship real full-stack products, not tutorials.",
   url: "https://example.com",
-  ogImage: "/og-image.png",
+  ogImage: "/logo.png",
   creator: "@yourhandle",
   authors: [
     {
@@ -60,7 +60,7 @@ export const baseMetadata: Metadata = {
       {
         url: siteConfig.ogImage,
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: siteConfig.name,
       },
     ],
@@ -71,11 +71,6 @@ export const baseMetadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: siteConfig.creator,
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-icon.png",
   },
   manifest: "/site.webmanifest",
 };
@@ -110,7 +105,7 @@ export function createMetadata({
         {
           url: ogImage,
           width: 1200,
-          height: 630,
+          height: 1200,
           alt: title ?? siteConfig.name,
         },
       ],
