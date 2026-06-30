@@ -28,7 +28,7 @@ const DEFAULT_FONT = 'bold 30px Figtree';
 const DEFAULT_FONT_URL = 'https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap';
 
 function deriveFontFamilyFromUrl(url: string) {
-  const fileName = (url.split('/').pop() || 'custom-font').split('?')[0];
+  const fileName = (url.split('/').pop() || 'custom-font').split('?')[0] ?? 'custom-font';
   const base = fileName.replace(/\.(woff2?|ttf|otf|eot)$/i, '');
   return base.replace(/[^a-zA-Z0-9-_ ]/g, '').trim() || 'CircularGalleryFont';
 }
