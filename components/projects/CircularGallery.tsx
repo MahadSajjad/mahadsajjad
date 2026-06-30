@@ -261,7 +261,7 @@ class App {
   constructor(
     container: HTMLElement,
     { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree', scrollSpeed = 2, scrollEase = 0.05, imageScale = 1 }:
-    { items?: { image: string; text: string }[]; bend?: number; textColor?: string; borderRadius?: number; font?: string; scrollSpeed?: number; scrollEase?: number; imageScale?: number } = {}
+    { items?: { image: string; text: string }[] | undefined; bend?: number | undefined; textColor?: string | undefined; borderRadius?: number | undefined; font?: string | undefined; scrollSpeed?: number | undefined; scrollEase?: number | undefined; imageScale?: number | undefined } = {}
   ) {
     document.documentElement.classList.remove('no-js');
     this.container = container; this.scrollSpeed = scrollSpeed;
