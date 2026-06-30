@@ -5,7 +5,7 @@ import { FadeIn, ScaleUnblur } from "@/components/ui/motion-primitives";
 import { RotatingText } from "@/components/ui/rotating-text";
 import TiltedCard from "./TiltedCard";
 
-const PORTRAIT_SRC = "/josh.webp";
+const PORTRAIT_SRC = "/mahad.png";
 
 export function Hero(): ReactNode {
   return (

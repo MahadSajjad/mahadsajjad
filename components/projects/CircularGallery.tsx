@@ -44,13 +44,13 @@ async function loadFontFromStylesheet(url: string) {
     const familyMatch = block.match(/font-family:\s*['"]?([^;'"]+)['"]?/);
     const urlMatch = block.match(/url\(\s*['"]?([^'")]+)['"]?\s*\)/);
     if (!familyMatch || !urlMatch) continue;
-    family = familyMatch[1].trim();
+    family = (familyMatch[1] ?? '').trim();
     const descriptors: FontFaceDescriptors = {};
     const weightMatch = block.match(/font-weight:\s*([^;]+);/);
     const styleMatch = block.match(/font-style:\s*([^;]+);/);
-    if (weightMatch) descriptors.weight = weightMatch[1].trim();
-    if (styleMatch) descriptors.style = styleMatch[1].trim();
-    fontFaces.push(new FontFace(family, `url(${urlMatch[1]})`, descriptors));
+    if (weightMatch) descriptors.weight = (weightMatch[1] ?? '').trim();
+    if (styleMatch) descriptors.style = (styleMatch[1] ?? '').trim();
+    fontFaces.push(new FontFace(family, `url(${urlMatch[1] ?? ''})`, descriptors));
   }
   if (!family) throw new Error('No @font-face rule found in the stylesheet');
   await Promise.allSettled(fontFaces.map(async face => { await face.load(); document.fonts.add(face); }));
@@ -81,7 +81,7 @@ async function resolveFont(font: string, fontUrl?: string) {
   try {
     const family = await loadCustomFont(effectiveUrl);
     const sizeMatch = font.match(/^\s*(.*?\d+px)/);
-    const prefix = sizeMatch ? sizeMatch[1].trim() : 'bold 30px';
+    const prefix = sizeMatch ? (sizeMatch[1] ?? '').trim() : 'bold 30px';
     const resolved = `${prefix} "${family}"`;
     if (document.fonts?.load) {
       try { await document.fonts.load(resolved); } catch { /* ignore */ }
@@ -95,7 +95,7 @@ async function resolveFont(font: string, fontUrl?: string) {
 
 function getFontSize(font: string) {
   const match = font.match(/(\d+)px/);
-  return match ? parseInt(match[1], 10) : 30;
+  return match ? parseInt(match[1] ?? '30', 10) : 30;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
