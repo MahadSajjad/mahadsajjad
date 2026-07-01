@@ -22,19 +22,25 @@ export function AboutSummary(): ReactNode {
       className="mx-auto w-full max-w-275 px-6 sm:px-10"
       aria-labelledby="about-heading"
     >
-      <FadeIn>
+      <FadeIn className="flex flex-col items-center gap-4 text-center">
+        <h2
+          id="about-heading"
+          className="font-serif text-[2.25rem] font-medium leading-[1.05] tracking-tight text-foreground sm:text-[2.75rem]"
+        >
+          About Me
+        </h2>
+        <p className="max-w-[42ch] text-[18px] leading-[1.4] tracking-tight text-foreground/65 sm:text-[20px]">
+          A bit about who I am and how I got into building things.
+        </p>
+      </FadeIn>
+
+      <FadeIn className="mt-12">
         <div className="rounded-3xl border border-foreground/5 bg-foreground/2 p-6 sm:rounded-4xl sm:p-10 lg:p-12 dark:bg-foreground/4">
           <div className="grid gap-8 sm:gap-10 md:grid-cols-[1.4fr_1fr] md:gap-14">
             <div className="flex flex-col">
-              <p className="text-[12px] font-medium uppercase tracking-wider text-foreground/40">
-                About Me
-              </p>
-              <h2
-                id="about-heading"
-                className="mt-3 font-serif text-[1.6rem] font-medium leading-[1.15] tracking-tight text-balance text-foreground sm:mt-4 sm:text-[2rem] sm:leading-[1.12] lg:text-[2.4rem]"
-              >
+              <h3 className="font-serif text-[1.6rem] font-medium leading-[1.15] tracking-tight text-balance text-foreground sm:text-[2rem] sm:leading-[1.12] lg:text-[2.4rem]">
                 I build because I love making ideas actually work.
-              </h2>
+              </h3>
               <div className="mt-5 space-y-4 text-[15px] leading-[1.6] tracking-tight text-foreground/70 sm:mt-6 sm:space-y-5 sm:text-[17px] sm:leading-[1.65]">
                 <p>
                   I got into development because I wanted to build things
