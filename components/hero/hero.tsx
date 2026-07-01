@@ -37,7 +37,7 @@ export function Hero(): ReactNode {
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-            I've shipped SaaS platforms, POS systems, and client products end-to-end — solo.
+            A full-stack developer who builds products end-to-end, from database to deployment.
             </p>
 
             <HeroCtas />
