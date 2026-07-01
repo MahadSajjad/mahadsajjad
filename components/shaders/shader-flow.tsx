@@ -152,6 +152,9 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
       alpha: false,
       antialias: false,
       powerPreference: "high-performance",
+      // Keep the drawing buffer so OS screenshots capture the shader
+      // instead of rendering it black.
+      preserveDrawingBuffer: true,
     });
     const gl = r.gl;
     gl.canvas.style.width = "100%";

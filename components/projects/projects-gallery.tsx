@@ -25,6 +25,7 @@ const GALLERY_ITEMS = [
 
 export function ProjectsGallery() {
   const [textColor, setTextColor] = useState('#ffffff');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const update = () => {
@@ -37,12 +38,22 @@ export function ProjectsGallery() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
   return (
     <section className="relative w-full pb-24 sm:pb-32">
-      <div style={{ height: '500px', position: 'relative' }}>
+      <div className="relative h-[360px] sm:h-[500px]">
         <CircularGallery
           items={GALLERY_ITEMS}
-          bend={3}
+          // Flat on mobile: a narrow viewport makes any bend rotate off-center
+          // images heavily. Keep the curved look on larger screens.
+          bend={isMobile ? 0 : 3}
           textColor={textColor}
           borderRadius={0.05}
           scrollSpeed={2}
