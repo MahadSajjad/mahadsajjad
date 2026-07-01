@@ -138,6 +138,15 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
     const el = ref.current;
     if (!el) return;
 
+    // On phones/touch, render at a lower internal resolution and cap the
+    // fragment-shader iteration count. Keeps the effect but slashes GPU fill
+    // and per-pixel loop cost. Desktop stays full quality.
+    const isMobile = window.matchMedia(
+      "(max-width: 767px), (pointer: coarse)"
+    ).matches;
+    const renderScale = isMobile ? 0.6 : 1;
+    const maxIterations = isMobile ? 6 : 24;
+
     const r = new Renderer({
       dpr: Math.min(window.devicePixelRatio || 1, 1),
       alpha: false,
@@ -186,9 +195,11 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
     mesh.setParent(scene);
 
     const onResize = (): void => {
-      const w = el.clientWidth;
-      const h = el.clientHeight;
+      const w = Math.max(1, Math.round(el.clientWidth * renderScale));
+      const h = Math.max(1, Math.round(el.clientHeight * renderScale));
       r.setSize(w, h);
+      gl.canvas.style.width = "100%";
+      gl.canvas.style.height = "100%";
       p.uniforms.uR.value = [gl.drawingBufferWidth, gl.drawingBufferHeight];
     };
 
@@ -229,7 +240,10 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
       p.uniforms.uV.value = [...(c.flowSpeed ?? D.flowSpeed)];
       p.uniforms.uS.value = c.scale ?? D.scale;
       p.uniforms.uB.value = c.brightness ?? D.brightness;
-      p.uniforms.uIt.value = c.iterations ?? D.iterations;
+      p.uniforms.uIt.value = Math.min(
+        c.iterations ?? D.iterations,
+        maxIterations
+      );
       p.uniforms.uColorLow.value = [...(c.colorLowA ?? D.colorLowA)];
       p.uniforms.uColorHigh.value = [...(c.colorHighA ?? D.colorHighA)];
       p.uniforms.uFadeShape.value = [
