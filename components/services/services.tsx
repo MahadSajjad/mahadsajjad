@@ -1,11 +1,4 @@
-import {
-  Boxes,
-  LayoutDashboard,
-  ScanBarcode,
-  Server,
-  Sparkles,
-  Gauge,
-} from "lucide-react";
+import { Boxes, LayoutDashboard, ScanBarcode, Server, Sparkles, Gauge, } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 
 import { TechLoop } from "@/components/services/tech-loop";
@@ -21,7 +14,7 @@ const SERVICES: Service[] = [
   {
     title: "Full-Stack Web Apps",
     description:
-      "End-to-end products built from database to deployment — architecture, APIs, edge cases, and a frontend that holds up under real use.",
+      "End-to-end products built from database to deployment, covering architecture, APIs, edge cases, and a frontend that holds up under real use.",
     icon: Boxes,
   },
   {
@@ -33,7 +26,7 @@ const SERVICES: Service[] = [
   {
     title: "POS Systems",
     description:
-      "Point-of-sale tools with payment, discount, and tax logic, barcode architecture (EAN-13), and bulk operations that fail gracefully.",
+      "Point-of-sale tools with payment, discount, and tax logic, barcode architecture (EAN-13), and bulk operations.",
     icon: ScanBarcode,
   },
   {
@@ -51,7 +44,7 @@ const SERVICES: Service[] = [
   {
     title: "Performance & SEO",
     description:
-      "Fast, discoverable sites — SEO/GEO optimization, sensible loading, and the polish that makes a product feel considered.",
+      "Fast, discoverable sites, built with SEO/GEO optimization, sensible loading, and the polish that makes a product feel considered.",
     icon: Gauge,
   },
 ];
@@ -71,7 +64,7 @@ export function Services(): ReactNode {
           What I Do
         </h2>
         <p className="max-w-[42ch] text-[18px] leading-[1.4] tracking-tight text-foreground/65 sm:text-[20px]">
-          I take products from an idea to something real people use — owning
+          I take products from an idea to something real people use, owning
           every decision along the way.
         </p>
       </FadeIn>

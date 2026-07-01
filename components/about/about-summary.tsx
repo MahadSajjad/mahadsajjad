@@ -56,11 +56,11 @@ export function AboutSummary(): ReactNode {
               </div>
               <Link
                 href="/about"
-                className="focus-ring mt-8 inline-flex w-fit items-center gap-1.5 text-[15px] font-medium tracking-tight text-foreground/70 transition-colors hover:text-foreground"
+                className="focus-ring group/cta mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[15px] font-medium tracking-tight text-background shadow-sm transition-all hover:gap-2.5 hover:opacity-90"
               >
                 More about me
                 <ArrowRight
-                  className="h-4 w-4"
+                  className="h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-0.5"
                   strokeWidth={2.25}
                   aria-hidden="true"
                 />
