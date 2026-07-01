@@ -33,6 +33,7 @@ type Project = {
   meta: string;
   image: StaticImageData;
   imageAlt: string;
+  href?: string;
 };
 
 const PROJECTS: Project[] = [
@@ -46,6 +47,7 @@ const PROJECTS: Project[] = [
     meta: "React · Tailwind · Supabase",
     image: alFajr,
     imageAlt: "Al Fajr project",
+    href: "https://alfajrcontractingco.vercel.app/",
   },
   {
     id: "pos",
@@ -57,6 +59,7 @@ const PROJECTS: Project[] = [
     meta: "React · Bootstrap · Supabase",
     image: pos,
     imageAlt: "POS system dashboard",
+    href: "https://fmse.vercel.app/",
   },
   {
     id: "getsetproperties",
@@ -68,6 +71,7 @@ const PROJECTS: Project[] = [
     meta: "React · Tailwind · Supabase",
     image: getSetProperties,
     imageAlt: "Get Set Properties real-estate platform",
+    href: "https://getsetproperties.com/",
   },
   {
     id: "transiqi",
@@ -79,6 +83,7 @@ const PROJECTS: Project[] = [
     meta: "MERN · Ant Design · i18n",
     image: transiqi,
     imageAlt: "Transiqi logistics dashboard",
+    href: "https://transiqi.netlify.app/auth/login",
   },
   {
     id: "metafessional",
@@ -90,6 +95,7 @@ const PROJECTS: Project[] = [
     meta: "Next.js · Shadcn · Framer Motion",
     image: metafessional,
     imageAlt: "Metafessional company website",
+    href: "https://metafessional.com/",
   },
   {
     id: "fashionthread",
@@ -101,6 +107,7 @@ const PROJECTS: Project[] = [
     meta: "Shopify",
     image: fashionThread,
     imageAlt: "Fashion Thread e-commerce store",
+    href: "http://fashionthread.shop/",
   },
   {
     id: "nutrista",
@@ -123,6 +130,7 @@ const PROJECTS: Project[] = [
     meta: "Shopify",
     image: aureolea,
     imageAlt: "Aureolea perfume storefront",
+    href: "https://aureolea.com/",
   },
 
 ];
@@ -185,12 +193,8 @@ function ProjectCard({
   index: number;
 }): ReactNode {
   const Icon = project.icon;
-  return (
-    <FadeIn
-      delay={Math.min(index * 0.06, 0.3)}
-      className="mb-6 break-inside-avoid md:mb-7"
-    >
-      <article className="project-card flex cursor-pointer flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 sm:p-3.5">
+  const card = (
+    <article className="project-card flex h-full cursor-pointer flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 sm:p-3.5">
         <header className="flex items-center gap-2.5 px-1 pt-2">
           <span className="border-foreground/10 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border bg-background">
             <Icon className="h-3.5 w-3.5 text-foreground" aria-hidden="true" />
@@ -229,6 +233,26 @@ function ProjectCard({
           {project.meta}
         </p>
       </article>
+  );
+
+  return (
+    <FadeIn
+      delay={Math.min(index * 0.06, 0.3)}
+      className="mb-6 break-inside-avoid md:mb-7"
+    >
+      {project.href ? (
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${project.iconLabel}`}
+          className="focus-ring block rounded-3xl"
+        >
+          {card}
+        </a>
+      ) : (
+        card
+      )}
     </FadeIn>
   );
 }
