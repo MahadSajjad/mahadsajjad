@@ -3,6 +3,7 @@
 import { Moon, Sun } from "lucide-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -155,6 +156,20 @@ export function Nav(): ReactNode {
       className="fixed left-1/2 top-6 z-50 -translate-x-1/2"
     >
       <div className="flex items-center gap-1 rounded-full bg-background p-1.5 shadow-sm border border-foreground/8">
+        <Link
+          href="/"
+          aria-label="Home"
+          className="focus-ring mr-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-foreground/8 transition-transform hover:scale-105"
+        >
+          <Image
+            src="/logo.png"
+            alt="Mahad Sajjad logo"
+            width={32}
+            height={32}
+            priority
+            className="h-full w-full object-cover dark:invert"
+          />
+        </Link>
         <ul ref={listRef} className="relative flex items-center gap-1">
           {pillRect && (
             <motion.span

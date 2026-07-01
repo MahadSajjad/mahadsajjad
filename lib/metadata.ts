@@ -4,13 +4,13 @@ export const siteConfig = {
   name: "Mahad Sajjad",
   description:
     "BSCS student and MERN stack developer. I ship real full-stack products, not tutorials.",
-  url: "https://example.com",
+  url: "https://mahadsajjad.vercel.app",
   ogImage: "/logo.png",
   creator: "@yourhandle",
   authors: [
     {
       name: "Mahad Sajjad",
-      url: "https://example.com",
+      url: "https://mahadsajjad.vercel.app",
     },
   ],
   keywords: [
