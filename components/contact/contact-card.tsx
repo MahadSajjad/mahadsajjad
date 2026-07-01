@@ -42,7 +42,7 @@ export function ContactCard(): ReactNode {
               <div className="border-foreground/8 flex flex-col items-center justify-center gap-6 rounded-[1.1rem] border bg-background p-6 sm:p-8">
                 <div className="flex items-center gap-3 opacity-75">
                   <SocialIcon
-                    href="mailto:web.mahadsajjad@gmail.com"
+                    href="mailto:web.mahadsajjad787@gmail.com"
                     label="Email"
                     lucideIcon={Mail}
                   />
