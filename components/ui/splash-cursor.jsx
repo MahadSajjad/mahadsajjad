@@ -19,7 +19,8 @@ function SplashCursor({
   RAINBOW_MODE = true,
   COLOR = '#ff0000',
   LIGHT_MODE = false,
-  OPACITY = 1
+  OPACITY = 1,
+  MAX_PIXEL_RATIO = 2
 }) {
   const canvasRef = useRef(null);
 
@@ -923,7 +924,9 @@ function SplashCursor({
     }
 
     function scaleByPixelRatio(input) {
-      const pixelRatio = window.devicePixelRatio || 1;
+      // Cap DPR so high-density phone screens (2x–3x) don't blow up the
+      // canvas backing store and framebuffer fill cost.
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, MAX_PIXEL_RATIO);
       return Math.floor(input * pixelRatio);
     }
 
