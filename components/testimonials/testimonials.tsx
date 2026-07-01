@@ -4,30 +4,33 @@ import type { ReactNode } from "react";
 import { FadeIn } from "@/components/ui/motion-primitives";
 
 type Testimonial = {
+  project: string;
   quote: string;
   name: string;
   role: string;
 };
 
-// TODO(mahad): Replace these placeholders with real client quotes.
 const TESTIMONIALS: Testimonial[] = [
   {
+    project: "Transiqi",
     quote:
-      "Placeholder quote — swap this for a real client testimonial. Mahad shipped exactly what we agreed on, on time, and communicated clearly the whole way.",
-    name: "Client Name",
-    role: "Founder, Company",
+      "Mahad built our vehicle and logistics dashboard and the whole experience was great. He understood exactly what our operations team needed and delivered a system that made our day-to-day tracking much easier to manage.",
+    name: "Nejat Sayed",
+    role: "Operations & Logistics Manager",
   },
   {
+    project: "Al Fajr",
     quote:
-      "Placeholder quote — describe the problem Mahad solved and the outcome. Numbers and specifics land best here.",
-    name: "Client Name",
-    role: "Product Lead, Company",
+      "The website Mahad built for us is smooth, responsive, and exactly what we needed. He was professional throughout and delivered everything fast without compromising on quality. A genuinely well-developed site.",
+    name: "Hayat Khan",
+    role: "Manager, Al Fajr Contracting Company, Saudi Arabia",
   },
   {
+    project: "Nutrista",
     quote:
-      "Placeholder quote — a short, punchy line about working with him works well as the third card.",
-    name: "Client Name",
-    role: "CEO, Company",
+      "Very satisfied with the overall experience. The website is clean and responsive, and the dashboard covers every requirement we had. Communication was smooth from start to finish, and every change we asked for was handled efficiently.",
+    name: "Muhammad Umair Ahmad",
+    role: "Project Manager, Al Fajr Contracting Company, Saudi Arabia",
   },
 ];
 

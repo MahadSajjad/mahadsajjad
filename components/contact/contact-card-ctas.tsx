@@ -15,17 +15,18 @@ export function ContactCardCtas(): ReactNode {
       <motion.div
         layout
         transition={{ layout: { duration: 0.55, ease: EASE } }}
-        className="mt-2 flex flex-wrap items-center gap-3"
+        className="mt-2 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center"
       >
-        <ContactButton />
+        <ContactButton className="w-full sm:w-auto" />
 
         <motion.div
           layout
           transition={{ layout: { duration: 0.55, ease: EASE } }}
+          className="w-full sm:w-auto"
         >
           <Link
             href="/projects"
-            className="border border-foreground/5 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-md/2 transition-colors"
+            className="border border-foreground/5 focus-ring group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-md/2 transition-colors sm:w-auto"
           >
             See projects
             <ArrowRight

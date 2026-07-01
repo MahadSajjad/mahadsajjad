@@ -9,7 +9,11 @@ const WHATSAPP_NUMBER = "+92 324 4199929";
 const WHATSAPP_URL = "https://wa.me/923244199929";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-export function ContactButton(): ReactNode {
+export function ContactButton({
+  className,
+}: {
+  className?: string;
+}): ReactNode {
   const [open, setOpen] = useState(false);
 
   return (
@@ -25,7 +29,7 @@ export function ContactButton(): ReactNode {
       aria-label={`Message me on WhatsApp at ${WHATSAPP_NUMBER}`}
       transition={{ layout: { duration: 0.55, ease: EASE } }}
       style={{ borderRadius: 12 }}
-      className="focus-ring relative inline-flex h-11 cursor-pointer items-center justify-center bg-foreground px-5 text-sm font-medium text-background"
+      className={`focus-ring relative inline-flex h-11 cursor-pointer items-center justify-center bg-foreground px-5 text-sm font-medium text-background ${className ?? ""}`}
     >
       <motion.span
         layout="position"

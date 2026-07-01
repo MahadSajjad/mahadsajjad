@@ -162,7 +162,7 @@ export function Projects({
           <div className="mt-12 flex justify-center sm:mt-16">
             <Link
               href="/projects"
-              className="focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-sm transition-all hover:gap-2.5 hover:opacity-90"
+              className="focus-ring group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-sm transition-all hover:gap-2.5 hover:opacity-90 sm:w-auto"
             >
               View all projects
               <ArrowRight
