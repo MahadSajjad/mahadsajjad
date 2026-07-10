@@ -91,7 +91,7 @@ const PROJECTS: Project[] = [
     iconLabel: "Metafessional",
     title: "My own agency Metafessional.",
     description:
-      "The public-facing website for my agency, Metafessional is built with Next.js, Shadcn, and Framer Motion to represent the brand and convert visitors into clients.",
+      "Metafessional is my own agency. This is its public-facing website, built with Next.js, Shadcn, and Framer Motion to represent the brand and convert visitors into clients.",
     meta: "Next.js · Shadcn · Framer Motion",
     image: metafessional,
     imageAlt: "Metafessional company website",

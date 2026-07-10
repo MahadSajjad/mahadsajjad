@@ -1,5 +1,6 @@
 import { AboutSummary } from "@/components/about/about-summary";
 import { ContactCard } from "@/components/contact/contact-card";
+import { Faq, faqJsonLd } from "@/components/faq/faq";
 import { Hero } from "@/components/hero/hero";
 import { Projects } from "@/components/projects/projects";
 import { Services } from "@/components/services/services";
@@ -22,6 +23,10 @@ export default function HomePage(): ReactNode {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Hero />
       <AboutSummary />
       <Services />
@@ -29,6 +34,7 @@ export default function HomePage(): ReactNode {
         <Projects withHeadline viewMoreVisible />
       </div>
       <Testimonials />
+      <Faq />
       <div id="contact" className="scroll-mt-28">
         <ContactCard />
       </div>
