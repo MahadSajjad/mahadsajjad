@@ -1,6 +1,6 @@
 # Hi, I'm Mahad Sajjad 👋
 
-Full-stack MERN developer and BSCS student. I ship real full-stack products, not tutorials — SaaS platforms, POS systems, and admin dashboards, built end-to-end and mostly solo, from database schema to deployment.
+Full-stack MERN developer. I ship real full-stack products, not tutorials — SaaS platforms, POS systems, and admin dashboards, built end-to-end and mostly solo, from database schema to deployment.
 
 🌐 **Portfolio:** [mahadsajjad.vercel.app](https://mahadsajjad.vercel.app)
 📩 **Open to freelance/contract work** — reach out via [email](mailto:mahadsajjad787@gmail.com)
