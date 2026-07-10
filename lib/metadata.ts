@@ -6,7 +6,6 @@ export const siteConfig = {
     "BSCS student and MERN stack developer. I ship real full-stack products, not tutorials.",
   url: "https://mahadsajjad.vercel.app",
   ogImage: "/logo.png",
-  creator: "@yourhandle",
   authors: [
     {
       name: "Mahad Sajjad",
@@ -33,7 +32,6 @@ export const baseMetadata: Metadata = {
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
   authors: [...siteConfig.authors],
-  creator: siteConfig.creator,
   publisher: siteConfig.name,
   robots: {
     index: true,
@@ -65,13 +63,6 @@ export const baseMetadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: siteConfig.creator,
-  },
   manifest: "/site.webmanifest",
 };
 
@@ -98,6 +89,9 @@ export function createMetadata({
       canonical: path,
     },
     openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: siteConfig.name,
       title: title ?? siteConfig.name,
       description: description ?? siteConfig.description,
       url,
@@ -109,11 +103,6 @@ export function createMetadata({
           alt: title ?? siteConfig.name,
         },
       ],
-    },
-    twitter: {
-      title: title ?? siteConfig.name,
-      description: description ?? siteConfig.description,
-      images: [ogImage],
     },
     ...(noIndex && {
       robots: {
