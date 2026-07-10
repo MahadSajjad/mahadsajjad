@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "Mahad Sajjad",
   description:
-    "BSCS student and MERN stack developer. I ship real full-stack products, not tutorials.",
+    "MERN stack developer. I ship real full-stack products, not tutorials.",
   url: "https://mahadsajjad.vercel.app",
   ogImage: "/logo.png",
   authors: [

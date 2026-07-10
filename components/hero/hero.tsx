@@ -12,7 +12,7 @@ export function Hero(): ReactNode {
     <section className="relative w-full">
       <div className="mx-auto w-full max-w-275 px-6 pt-44 pb-24 sm:px-10 sm:pt-56 sm:pb-32">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-8">
-          <FadeIn className="flex flex-col gap-4">
+          <FadeIn className="order-2 flex flex-col gap-4 md:order-none">
             <p className="text-[30px] leading-tight tracking-tight font-medium text-foreground">
               I&rsquo;m Mahad Sajjad
             </p>
@@ -43,7 +43,7 @@ export function Hero(): ReactNode {
             <HeroCtas />
           </FadeIn>
 
-          <ScaleUnblur className="flex justify-stretch md:justify-end">
+          <ScaleUnblur className="order-1 flex justify-stretch md:order-none md:justify-end">
             <div className="relative aspect-square w-full md:max-w-105">
               <TiltedCard
                 imageSrc={PORTRAIT_SRC}

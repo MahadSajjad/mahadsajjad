@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { ComponentType, ReactNode } from "react";
 
 import LogoLoopBase from "@/components/ui/logo-loop";
@@ -52,14 +53,26 @@ const TECH_LOGOS: TechLogo[] = SLUGS.map(({ slug, title }) => ({
   title,
 }));
 
+const LOGO_HEIGHT = 44;
+
 export function TechLoop(): ReactNode {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   return (
     <LogoLoop
       logos={TECH_LOGOS}
       speed={40}
       direction="left"
-      logoHeight={36}
-      gap={64}
+      logoHeight={LOGO_HEIGHT}
+      gap={isMobile ? 28 : 64}
       hoverSpeed={0}
       scaleOnHover
       fadeOut
@@ -69,10 +82,12 @@ export function TechLoop(): ReactNode {
           src={item.src}
           alt={item.alt}
           title={item.title}
+          width={LOGO_HEIGHT}
+          height={LOGO_HEIGHT}
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="h-[var(--logoloop-logoHeight)] w-auto object-contain opacity-50 transition-[opacity,transform] duration-300 group-hover/item:scale-110 group-hover/item:opacity-100 dark:invert"
+          className="h-[var(--logoloop-logoHeight)] w-[var(--logoloop-logoHeight)] object-contain opacity-50 transition-[opacity,transform] duration-300 group-hover/item:scale-110 group-hover/item:opacity-100 dark:invert"
         />
       )}
     />
