@@ -1,6 +1,16 @@
+<!-- ============================================================= -->
+<!-- BANNER: commit dark.svg and light.svg into an /assets folder   -->
+<!-- in this repo. GitHub auto-switches based on the viewer's theme. -->
+<!-- ============================================================= -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="./assets/dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/light.svg">
+  <img alt="Mahad Sajjad — Full-Stack MERN Developer" src="./assets/dark.svg" width="100%">
+</picture>
+
 # Hi, I'm Mahad Sajjad 👋
 
-Full-stack MERN developer. I ship real full-stack products, not tutorials — SaaS platforms, POS systems, and admin dashboards, built end-to-end and mostly solo, from database schema to deployment.
+Full-stack MERN developer. I ship real full-stack products, not tutorials. SaaS platforms, POS systems, and admin dashboards, built end-to-end and mostly solo, from database schema to deployment.
 
 🌐 **Portfolio:** [mahadsajjad.vercel.app](https://mahadsajjad.vercel.app)
 📩 **Open to freelance/contract work** — reach out via [email](mailto:mahadsajjad787@gmail.com)
@@ -43,6 +53,7 @@ Full-stack MERN developer. I ship real full-stack products, not tutorials — Sa
 More on [my portfolio](https://mahadsajjad.vercel.app/projects).
 
 ### Connect
+<!-- TODO: replace YOUR_NUMBER_HERE with your number in intl format, e.g. 923001234567 -->
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/YOUR_NUMBER_HERE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahad-sajjad-b34826337/)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/mahadvizz/)
