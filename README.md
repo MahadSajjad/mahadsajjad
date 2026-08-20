@@ -53,7 +53,7 @@ More on [my portfolio](https://mahadsajjad.vercel.app/projects).
 
 ### Connect
 <!-- TODO: replace YOUR_NUMBER_HERE with your number in intl format, e.g. 923001234567 -->
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/YOUR_NUMBER_HERE)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/03147299331)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahad-sajjad-b34826337/)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/mahadvizz/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:mahadsajjad787@gmail.com)
