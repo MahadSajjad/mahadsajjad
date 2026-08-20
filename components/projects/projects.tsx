@@ -47,7 +47,7 @@ const PROJECTS: Project[] = [
     meta: "React · Tailwind · Supabase",
     image: alFajr,
     imageAlt: "Al Fajr project",
-    href: "https://alfajrcontractingco.vercel.app/",
+    href: "https://alfajrcontractingco.com/",
   },
   {
     id: "pos",
