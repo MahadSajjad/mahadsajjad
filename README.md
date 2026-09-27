@@ -24,6 +24,8 @@ I'm a full-stack developer focused on turning ideas into useful web products. I 
 | [Get Set Properties](https://getsetproperties.com/) | Property listings, a management dashboard, and buyer inquiry flows.                      | React, Tailwind CSS, Supabase     |
 | [Metafessional](https://metafessional.com/)         | Public website for my agency.                                                            | Next.js, shadcn/ui, Framer Motion |
 | [Al Fajr](https://alfajrcontractingco.com/)         | Contracting company website with a Supabase-backed contact system.                       | React, Tailwind CSS, Supabase     |
+| [Emirates Front](https://emiratesfront.com/)         | Contracting company website with a whatsapp base contact system.                       | React, Tailwind CSS, Whatsapp     |
+| [The Elegance bedding UK](https://theelegancebedcompany.co.uk/)         |  Shopify store based in uk.                       | Shopify     |
 
 See more work on [my portfolio](https://mahadsajjad.vercel.app/projects).
 
@@ -31,7 +33,7 @@ See more work on [my portfolio](https://mahadsajjad.vercel.app/projects).
 
 - **Frontend:** JavaScript, TypeScript, React, Next.js, Tailwind CSS, Ant Design
 - **Backend and data:** Node.js, Express, MongoDB, Supabase, Firebase, Zod
-- **Workflow:** Git, Vercel
+- **Workflow:** Git, Vercel, Antigravity
 
 ## Get in touch
 
