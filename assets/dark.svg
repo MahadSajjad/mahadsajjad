@@ -1,148 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1180 610" width="1180" height="610" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" role="img" aria-label="Mahad Sajjad - developer profile banner">
-<defs>
-<clipPath id="canvasClip"><rect x="0" y="0" width="1180" height="610" rx="26"/></clipPath>
-<clipPath id="asciiReveal">
-<rect x="24" y="24" width="406" height="0"><animate attributeName="height" values="0;562" keyTimes="0;1" begin="0.35s" dur="2.4s" calcMode="spline" keySplines="0.22 1 0.36 1" fill="freeze"/></rect>
-</clipPath>
-<linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#10B981"/><animateTransform attributeName="gradientTransform" type="translate" values="-0.15 0;0.15 0;-0.15 0" dur="9s" repeatCount="indefinite"/></linearGradient>
-<linearGradient id="asciiGrad" gradientUnits="userSpaceOnUse" x1="-16" y1="24" x2="470" y2="586" spreadMethod="reflect"><stop offset="0" stop-color="#22D3EE"/><stop offset="0.45" stop-color="#7C3AED"/><stop offset="0.75" stop-color="#22D3EE"/><stop offset="1" stop-color="#10B981"/><animateTransform attributeName="gradientTransform" type="translate" values="0 0;243 281;0 0" dur="12s" repeatCount="indefinite"/></linearGradient>
-<radialGradient id="gbA"><stop offset="0" stop-color="#2563EB" stop-opacity="0.28"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
-<radialGradient id="gbB"><stop offset="0" stop-color="#7C3AED" stop-opacity="0.28"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0"/></radialGradient>
-<radialGradient id="gbC"><stop offset="0" stop-color="#10B981" stop-opacity="0.28"/><stop offset="1" stop-color="#10B981" stop-opacity="0"/></radialGradient>
-<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.1"/><stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.18"/></linearGradient>
-<linearGradient id="refl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.06"/><stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
-<linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity="0"/><stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.05"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></linearGradient>
-<linearGradient id="scanA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity="0"/><stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.22"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></linearGradient>
-<linearGradient id="shimmer" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1180" y2="0" spreadMethod="repeat"><stop offset="0" stop-color="#67E8F9" stop-opacity="0"/><stop offset="0.42" stop-color="#67E8F9" stop-opacity="0"/><stop offset="0.5" stop-color="#67E8F9" stop-opacity="0.9"/><stop offset="0.58" stop-color="#67E8F9" stop-opacity="0"/><stop offset="1" stop-color="#67E8F9" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" values="-1180 0;1180 0" dur="6s" repeatCount="indefinite"/></linearGradient>
-<linearGradient id="pillBorder" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.55"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0.35"/></linearGradient>
-<filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
-<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#22D3EE" flood-opacity="0.55"/></filter>
-<filter id="glowV" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#7C3AED" flood-opacity="0.5"/></filter>
-<filter id="asciiGlow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="0.9" flood-color="#22D3EE" flood-opacity="0.5"/></filter>
-<filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer></filter>
-</defs>
-<g clip-path="url(#canvasClip)">
-<rect x="0" y="0" width="1180" height="610" fill="#030712"/>
-<g filter="url(#soft)">
-<circle cx="230" cy="150" r="360" fill="url(#gbA)"><animateTransform attributeName="transform" type="translate" values="0 0;40 30;0 0" dur="16s" repeatCount="indefinite"/></circle>
-<circle cx="980" cy="520" r="420" fill="url(#gbB)"><animateTransform attributeName="transform" type="translate" values="0 0;-50 -20;0 0" dur="20s" repeatCount="indefinite"/></circle>
-<circle cx="820" cy="120" r="300" fill="url(#gbC)"><animateTransform attributeName="transform" type="translate" values="0 0;20 40;0 0" dur="18s" repeatCount="indefinite"/></circle>
-</g>
-<rect x="0" y="0" width="1180" height="610" filter="url(#noise)"/>
-<rect x="24" y="30" width="406" height="562" rx="18" fill="#000000" opacity="0.45" filter="url(#soft)"/><rect x="24" y="24" width="406" height="562" rx="18" fill="#0F172A" fill-opacity="0.55"/><rect x="24" y="24" width="406" height="562" rx="18" fill="url(#glass)"/><rect x="24" y="24" width="406" height="562" rx="18" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-<text x="44" y="54" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="11" fill="#64748B" letter-spacing="2">~/ portrait.ascii</text>
-<circle cx="406" cy="50" r="3" fill="#10B981"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
-<g clip-path="url(#asciiReveal)">
-<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -3.5;0 0" dur="6s" repeatCount="indefinite"/>
-<g fill="url(#asciiGrad)" filter="url(#asciiGlow)" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="7.5" letter-spacing="0" xml:space="preserve" style="white-space:pre">
-<text x="44" y="146.9">W#kolliiilLcoo??aaeekXXHHHH#WWW@@W###HXaccoakW@@@@WWWWWWWWWWWWWWWWWWWW######</text>
-<text x="44" y="155.2">@#k?tliiilLco??aaeekkXHHH#WHXXk?t+:,,,&quot;`.```&quot;~=itkW@@WWWWWWWWWWWWWWWWWWWW###</text>
-<text x="44" y="163.5">@WX?tlliitLco??aaeekXXHH#XL~~;```  &quot;&quot;.     .. ...`;i?W@WWWWWWWWWWWWWWWWWWWWW</text>
-<text x="44" y="171.8">@WX?ttliltLo???aeekkXXHHki!~:&quot;,;`&quot;!;:&quot;.. `&quot;.      `&#x27;.~H@WWWWWWWWWWWWWWWWWWWW</text>
-<text x="44" y="180.1">@@HattllltLo??aaeekkXXHel+i&quot;&#x27;&quot;:&quot;&quot;;!:;;,` :&quot; .      `&quot;&#x27;&#x27;L@WWWWWWWWWWWWWWWWWWW</text>
-<text x="44" y="188.4">@@#eLttlltco??aaeekkXXXeii; &quot;```&quot;&quot;.`&quot;&quot;`.&quot;:&#x27;,&quot;.`..    .:`o@WW@@@@@@@@@WWWWWWW</text>
-<text x="44" y="196.7">@@#eLttlltco?aaaekkXXXXai~:.&quot;` `&#x27;`     .&#x27;`&quot;``,&quot;&#x27;`     `; L@W@@@@@@@@@@@@WWWW</text>
-<text x="44" y="205.0">@@#eLttlltco?aaaeekXXHo!:::,``.&#x27;!+~;;&quot;&#x27;`.`..`.  .      ,::H@@@@@@@@@@@@@@@WW</text>
-<text x="44" y="213.3">@@WeLLtllLco?aaeeekXH?~++!;:::!+LeHXkactlllli=!&quot;.     .&quot;&quot;,H@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="221.6">@@WkLttttLcoaaaeekkXH=!+;:!!!+lXW@@WW#HHXkea?oLi;`  .  &#x27;&#x27;:H@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="229.9">@@WkLLtttLcoaaaeekkX#c!,`&quot;&quot;&#x27;,tkW@@WW###HHXkke?cti~&#x27;   .&#x27;&#x27;+@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="238.2">@@WkcLtttLcoaaaeekXXHX!&quot;&#x27;&#x27;&quot;&#x27;iXW@@@@@W#######Xkaottl+``&#x27;&quot;`t@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="246.5">@@WkcLLttLc?aaeeekXXX#i&#x27;,&#x27;&#x27;cW#XHHXXHH####He?t=++~!+?a,.&#x27;.a@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="254.8">@@WkcLLttLc?aaaeekkXX#a&#x27;:&quot;l@Xek?t=~itcekaL=;&quot;,:;!!~=ci&quot;.&#x27;?@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="263.1">@@WkcLLttLc?aaeeekkXXH#L;+oaXeLi=:,;=o?H?+:&#x27;!=:::,!+lo,:~&quot;k@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="271.4">@@WkoLLttLc?aaeeekkXX#oa@teHke?a?LLceoX@Xt~+ltLLLLLtck!,i;a@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="279.7">@@@XocLtltco?aaaeekXXHkH#lH@H##HHH##Hk@@Xc+=caeea?oLce=&quot;,c@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="288.0">@@#kcLo??aeekkXXXXXH###WH?e@@###HXkkX@@@HaLiioaa?oLc?o:+i#@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="296.3">cLl=:i#@@@@@@@@@@@@@@@@@@#c@@@@WH?eHHaeeL~:;;loaaoLLcl&quot;=?@@@@@@@@@@@@@@@@@@@</text>
-<text x="44" y="304.6">cccc++@@@@@@@@@@@@@@@@@@@@cX@#Hkt?##Xkecl~;;=ii=tL==l~iX@@@@@@@@@@@@@WWWWWWW</text>
-<text x="44" y="312.9">~+~~,;W@@@@@@@@@@@@@@@@@@@kt#XHot?o??a??cti~;::~ic+~=:H@@@@@@@@@@@@@@@WWWW##</text>
-<text x="44" y="321.2">&quot;,&quot;&quot;.:H@@H#@@@@@@@@@@@@@@@@LcXkkXXeooeekaat+;;tcL=;;:t@@@@@@@@@@@@@@@@@@@@@W</text>
-<text x="44" y="329.5">&quot;,&quot;,`,kWWeX@@@@@@@@@@@@@W##X=lcaX#@@#kaocl++=tLi~;,`+W@@@@@@@@@@@@@@@@@@@@#k</text>
-<text x="44" y="337.8">..`&quot;`&quot;e@@@@@@@@@@@@@@@@W##HHei=oX#W##XaL=iltccl++!&quot;:#@@@@@@@@@@@@@@@@@@@@WXc</text>
-<text x="44" y="346.1">..`,&#x27;&quot;?@@@@@@@@@@@@@@WW##HHXXkktloXW#W#kekaa?l+;:,~tX@@@@@@@@@@@@@@@@@@WWWHk</text>
-<text x="44" y="354.4">..`,&#x27;&quot;e@@@@@@@@@@@@@WWW##HXXXkH@L;;iLLt=~=~~,&#x27;&#x27;&#x27;&quot;!+L=!k@@@@@@@@@@@@@WW###HHH</text>
-<text x="44" y="362.7">..`&quot;.;@@@@@@@@#W@@@WWW##HHHHX=i@#a~&quot;```  ..  `:;!~+t! .ik@@@@@@@WWW####HHXXX</text>
-<text x="44" y="371.0">..`` ;@@@@@@@@XH#WWWWW@WW#kai:!#WW#kt~&quot;``.`&#x27;&quot;!~;!!~: &#x27;` ,!ck#@@@@@W##HHXXXXX</text>
-<text x="44" y="379.3">..`` ;@@@@@@@@XX#WWWWHe?oLlt:!;+W####X?Ll~;;;;;;;:&quot;  &#x27;` &quot;&quot;``&#x27;:!iL?kX###H##WW</text>
-<text x="44" y="387.6">..`` ;W@@@@@@@#Hkact=!!++iti:,=`iXHHHHHe?Ll+!;;;:&#x27;.  &#x27;  .&quot;&quot;`    .`&#x27;:!=toeHW@</text>
-<text x="44" y="395.9">.``` .o@@@@#k?t=~;:::!~+iii=:.+; +eXXXXe?ct+!!~;&quot;&#x27;&#x27; .&#x27;  .``...&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&quot;,;!i</text>
-<text x="44" y="404.2">`....&quot;Laot=~!;:::;:;+~!+=ii+;.:~&#x27; !oeeeaocti+=~,,;&#x27; .`  ``..``&#x27;..&#x27;&quot;&quot;&quot;&quot;&quot;,&quot;&quot;&quot;&quot;</text>
-<text x="44" y="412.5">`;+=i=+!;;;;;;;:::;::!++++=~!&#x27;,~;` ;ca?octttcc=:;&#x27;. .   ``&#x27;&#x27;&#x27;`.`&quot;&quot;&quot;&quot;&quot;&quot;&quot;,&quot;,,,</text>
-<text x="44" y="420.8">+?=!~;;!!;;;;!;:::;;!;~+!~+~~&#x27;&quot;;&#x27; .&#x27;:icc?o??i!&#x27;.       .&#x27;&#x27;`&#x27;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;,&quot;,,,,&quot;&quot;</text>
-<text x="44" y="429.1">?l!,~!;~!;:;!!;::!;!~!!!!~~+~&quot;&#x27;`   .   &#x27;=ke&#x27;          .&quot;&quot;&#x27;&#x27;&quot;&quot;&quot;&quot;,,:&quot;.,,,,,,,&quot;</text>
-<text x="44" y="437.4">Li~,:!!~!;::;;;;:~!::;;!!!~~~,   .       +!           &#x27;;&quot;&quot;&quot;&quot;&quot;&#x27;&#x27;&quot;::&#x27;`::,,,::,</text>
-<text x="44" y="445.7">i=~;&#x27;;!!!;::::;;,:+;;;;!!!!~+:  .``.   ..             &quot;;,&quot;&quot;&quot;,,,:::&#x27;&#x27;:,,::,,,</text>
-<text x="44" y="454.0">++~!&quot;&quot;!!!;::,:!;;;~!;!~~!!!~+;   ``..  .`.      .     :;&quot;&quot;&quot;,::,:::`&#x27;,&quot;,:::,,</text>
-<text x="44" y="462.3">~~!!:&#x27;!~~;::,;;;;;!~;~!!~~~~~~.  `&#x27;. .  ..&#x27;.   ..     :!,&quot;,::::;;,.&#x27;,&quot;,::;:&quot;</text>
-<text x="44" y="470.6">~!;;;&#x27;:~!;::::;;;;;+!!!~~~~~~!`  .&#x27;`  ..  `  ..``     ;;,&quot;,:,::;;&quot;.&#x27;,::,:::&quot;</text>
-<text x="44" y="478.9">!!;::&quot;`;~;::::;;;;:!!~~~!!~~~~&#x27;  .&#x27;`         ....     ;;,,:::;:::`.&quot;,::::,,&#x27;</text>
-<text x="44" y="487.2">:;;:&quot;&quot;`&quot;~;;;:::;;;;!~;!!!~~~~+,   ``   .  .....`.     !;,,:::::;:.`&quot;,::;:,&quot;`</text>
-<text x="44" y="495.5">,,,:;,&quot;.:!;:,:;;;;!;~!!!~~~++~:   `.    . . . ``     .!;:,::;:::&quot; `&quot;::::,&quot;&#x27;.</text>
-<text x="44" y="503.8">,&#x27;``&quot;,&quot;`&#x27;;;::;;;;!;:!~;!~~~~~~;   `.    .    .``     `!;,,::;:;:` &#x27;,:;:,&#x27;&#x27;`</text>
-</g>
-<rect x="44" y="507.8" width="7" height="11" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></rect>
-</g>
-</g>
-<g clip-path="url(#asciiReveal)"><rect x="24" y="24" width="406" height="46" fill="url(#scanA)"><animateTransform attributeName="transform" type="translate" values="0 -60;0 562;0 -60" dur="5.5s" repeatCount="indefinite"/></rect></g>
-<rect x="452" y="30" width="704" height="562" rx="18" fill="#000000" opacity="0.45" filter="url(#soft)"/><rect x="452" y="24" width="704" height="562" rx="18" fill="#0F172A" fill-opacity="0.55"/><rect x="452" y="24" width="704" height="562" rx="18" fill="url(#glass)"/><rect x="452" y="24" width="704" height="562" rx="18" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-<circle cx="480" cy="50" r="6.5" fill="#FF5F57"/>
-<circle cx="502" cy="50" r="6.5" fill="#FEBC2E"/>
-<circle cx="524" cy="50" r="6.5" fill="#28C840"/>
-<line x1="470" y1="70" x2="1138" y2="70" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-<g><rect x="994" y="37" width="132" height="24" rx="12" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.1" stroke-opacity="0.55"/><circle cx="1010" cy="49" r="4" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/><animate attributeName="r" values="4;5;4" dur="1.8s" repeatCount="indefinite"/></circle><text x="1022" y="53" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="11.5" fill="#94A3B8" letter-spacing="0.3">Open to work</text></g>
-<text x="486" y="142" font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="41" font-weight="800" opacity="0"><tspan fill="#F8FAFC">I'm </tspan><tspan fill="#F8FAFC" filter="url(#glow)">Mahad Sajjad</tspan><animate attributeName="opacity" from="0" to="1" begin="0.15s" dur="0.5s" fill="freeze"/></text>
-<text x="486" y="192" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="25" fill="#22D3EE" font-weight="600">&gt;</text>
-<clipPath id="type0"><rect x="516.0" y="167" width="0" height="37.5"><animate attributeName="width" values="0;375;375;0;0" keyTimes="0;0.05625;0.16250;0.20000;1" dur="16.0s" repeatCount="indefinite"/></rect></clipPath>
-<text x="516.0" y="192" clip-path="url(#type0)" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="25" font-weight="600" fill="#F8FAFC">Full-Stack MERN Developer</text>
-<g><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.00000;0.00313;0.19688;0.20000;1" dur="16.0s" repeatCount="indefinite"/><rect x="894" y="170" width="3" height="25" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect></g>
-<clipPath id="type1"><rect x="516.0" y="167" width="0" height="37.5"><animate attributeName="width" values="0;0;315;315;0;0" keyTimes="0;0.20000;0.25625;0.36250;0.40000;1" dur="16.0s" repeatCount="indefinite"/></rect></clipPath>
-<text x="516.0" y="192" clip-path="url(#type1)" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="25" font-weight="600" fill="#F8FAFC">SaaS Platform Builder</text>
-<g><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20000;0.20312;0.39688;0.40000;1" dur="16.0s" repeatCount="indefinite"/><rect x="834" y="170" width="3" height="25" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect></g>
-<clipPath id="type2"><rect x="516.0" y="167" width="0" height="37.5"><animate attributeName="width" values="0;0;300;300;0;0" keyTimes="0;0.40000;0.45625;0.56250;0.60000;1" dur="16.0s" repeatCount="indefinite"/></rect></clipPath>
-<text x="516.0" y="192" clip-path="url(#type2)" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="25" font-weight="600" fill="#F8FAFC">POS Systems Engineer</text>
-<g><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40000;0.40313;0.59688;0.60000;1" dur="16.0s" repeatCount="indefinite"/><rect x="819" y="170" width="3" height="25" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect></g>
-<clipPath id="type3"><rect x="516.0" y="167" width="0" height="37.5"><animate attributeName="width" values="0;0;375;375;0;0" keyTimes="0;0.60000;0.65625;0.76250;0.80000;1" dur="16.0s" repeatCount="indefinite"/></rect></clipPath>
-<text x="516.0" y="192" clip-path="url(#type3)" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="25" font-weight="600" fill="#F8FAFC">Admin Dashboard Developer</text>
-<g><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.60000;0.60313;0.79688;0.80000;1" dur="16.0s" repeatCount="indefinite"/><rect x="894" y="170" width="3" height="25" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect></g>
-<clipPath id="type4"><rect x="516.0" y="167" width="0" height="37.5"><animate attributeName="width" values="0;0;330;330;0;0" keyTimes="0;0.80000;0.85625;0.96250;1.00000;1" dur="16.0s" repeatCount="indefinite"/></rect></clipPath>
-<text x="516.0" y="192" clip-path="url(#type4)" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="25" font-weight="600" fill="#F8FAFC">API &amp; Backend Engineer</text>
-<g><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.80000;0.80313;0.99687;1.00000;1" dur="16.0s" repeatCount="indefinite"/><rect x="849" y="170" width="3" height="25" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect></g>
-<line x1="486" y1="226" x2="1122" y2="226" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.0s" dur="0.5s" fill="freeze"/><text x="486" y="268" font-size="15.5">📍</text><text x="518" y="268" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#64748B">Location</text><text x="642" y="268" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#F8FAFC">Faisalabad, PK</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.18s" dur="0.5s" fill="freeze"/><text x="486" y="301" font-size="15.5">🎓</text><text x="518" y="301" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#64748B">Education</text><text x="642" y="301" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#F8FAFC">BSCS · KFUEIT</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.3599999999999999s" dur="0.5s" fill="freeze"/><text x="486" y="334" font-size="15.5">🛠</text><text x="518" y="334" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#64748B">Building</text><text x="642" y="334" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#F8FAFC">SaaS · POS · Dashboards</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.54s" dur="0.5s" fill="freeze"/><text x="486" y="367" font-size="15.5">🌐</text><text x="518" y="367" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#64748B">Portfolio</text><text x="642" y="367" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#F8FAFC">mahadsajjad.vercel.app</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.72s" dur="0.5s" fill="freeze"/><text x="486" y="400" font-size="15.5">📩</text><text x="518" y="400" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#64748B">Email</text><text x="642" y="400" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="14.5" fill="#F8FAFC">mahadsajjad787@gmail.com</text></g>
-<text x="486" y="440" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="12" fill="#64748B" letter-spacing="1" opacity="0">// tech stack<animate attributeName="opacity" from="0" to="1" begin="2.0s" dur="0.5s" fill="freeze"/></text>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.2s" dur="0.4s" fill="freeze"/><rect x="486" y="458" width="70" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="0.0s" repeatCount="indefinite"/></rect><text x="521" y="479" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">React</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.31s" dur="0.4s" fill="freeze"/><rect x="566" y="458" width="87" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="0.3s" repeatCount="indefinite"/></rect><text x="610" y="479" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Next.js</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.4200000000000004s" dur="0.4s" fill="freeze"/><rect x="663" y="458" width="111" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="0.6s" repeatCount="indefinite"/></rect><text x="719" y="479" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">TypeScript</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.5300000000000002s" dur="0.4s" fill="freeze"/><rect x="784" y="458" width="111" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="0.9s" repeatCount="indefinite"/></rect><text x="840" y="479" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">JavaScript</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.64s" dur="0.4s" fill="freeze"/><rect x="905" y="458" width="87" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="1.2s" repeatCount="indefinite"/></rect><text x="949" y="479" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Node.js</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.75s" dur="0.4s" fill="freeze"/><rect x="1002" y="458" width="87" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="1.5s" repeatCount="indefinite"/></rect><text x="1045" y="479" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Express</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.8600000000000003s" dur="0.4s" fill="freeze"/><rect x="486" y="501" width="87" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="1.8s" repeatCount="indefinite"/></rect><text x="529" y="522" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">MongoDB</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.97s" dur="0.4s" fill="freeze"/><rect x="583" y="501" width="95" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="2.1s" repeatCount="indefinite"/></rect><text x="630" y="522" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Tailwind</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.08s" dur="0.4s" fill="freeze"/><rect x="688" y="501" width="111" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="2.4s" repeatCount="indefinite"/></rect><text x="743" y="522" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Ant Design</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.1900000000000004s" dur="0.4s" fill="freeze"/><rect x="808" y="501" width="95" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="2.7s" repeatCount="indefinite"/></rect><text x="856" y="522" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Supabase</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.3000000000000003s" dur="0.4s" fill="freeze"/><rect x="913" y="501" width="54" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="3.0s" repeatCount="indefinite"/></rect><text x="940" y="522" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Zod</text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.41s" dur="0.4s" fill="freeze"/><rect x="978" y="501" width="54" height="33" rx="16.5" fill="#111C33" fill-opacity="0.7" stroke="url(#pillBorder)" stroke-width="1.2" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.9;0.35" dur="3.5s" begin="3.3s" repeatCount="indefinite"/></rect><text x="1005" y="522" text-anchor="middle" font-family="ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13.5" fill="#F8FAFC">Git</text></g>
-<rect x="-200" y="0" width="240" height="610" fill="url(#refl)" transform="rotate(18 590.0 305.0)" opacity="0.8"><animateTransform attributeName="transform" type="translate" values="0 0;1580 0" dur="9s" repeatCount="indefinite" additive="sum"/></rect>
-<rect x="0" y="-80" width="1180" height="70" fill="url(#scanG)"><animateTransform attributeName="transform" type="translate" values="0 0;0 730" dur="7s" repeatCount="indefinite"/></rect>
-<circle cx="120" cy="540" r="2.0" fill="#10B981" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="11.7s" begin="0.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -20" dur="11.7s" begin="0.2s" repeatCount="indefinite"/></circle>
-<circle cx="360" cy="90" r="1.2" fill="#10B981" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="8.2s" begin="0.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -16" dur="8.2s" begin="0.9s" repeatCount="indefinite"/></circle>
-<circle cx="540" cy="470" r="1.2" fill="#22D3EE" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="8.6s" begin="0.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -16" dur="8.6s" begin="0.4s" repeatCount="indefinite"/></circle>
-<circle cx="700" cy="180" r="1.4" fill="#22D3EE" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="6.4s" begin="2.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -16" dur="6.4s" begin="2.5s" repeatCount="indefinite"/></circle>
-<circle cx="900" cy="540" r="1.2" fill="#22D3EE" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="9.5s" begin="3.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -20" dur="9.5s" begin="3.9s" repeatCount="indefinite"/></circle>
-<circle cx="1060" cy="120" r="1.2" fill="#7C3AED" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="9.3s" begin="1.7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -24" dur="9.3s" begin="1.7s" repeatCount="indefinite"/></circle>
-<circle cx="250" cy="300" r="1.2" fill="#22D3EE" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="9.4s" begin="2.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -24" dur="9.4s" begin="2.3s" repeatCount="indefinite"/></circle>
-<circle cx="820" cy="360" r="1.6" fill="#10B981" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="8.2s" begin="0.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -16" dur="8.2s" begin="0.2s" repeatCount="indefinite"/></circle>
-<circle cx="1000" cy="300" r="1.6" fill="#7C3AED" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="9.0s" begin="1.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -20" dur="9.0s" begin="1.9s" repeatCount="indefinite"/></circle>
-<circle cx="470" cy="150" r="1.4" fill="#22D3EE" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="8.2s" begin="2.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -24" dur="8.2s" begin="2.8s" repeatCount="indefinite"/></circle>
-<circle cx="640" cy="540" r="1.6" fill="#10B981" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="6.5s" begin="2.0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -12" dur="6.5s" begin="2.0s" repeatCount="indefinite"/></circle>
-<circle cx="160" cy="200" r="2.0" fill="#10B981" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="10.4s" begin="3.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -12" dur="10.4s" begin="3.9s" repeatCount="indefinite"/></circle>
-<circle cx="740" cy="90" r="1.2" fill="#7C3AED" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="9.1s" begin="0.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -24" dur="9.1s" begin="0.6s" repeatCount="indefinite"/></circle>
-<circle cx="1120" cy="420" r="1.4" fill="#10B981" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="8.5s" begin="2.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -16" dur="8.5s" begin="2.3s" repeatCount="indefinite"/></circle>
-</g>
-<rect x="1" y="1" width="1178" height="608" rx="25" fill="none" stroke="#1E293B" stroke-width="1.5"/>
-<rect x="1" y="1" width="1178" height="608" rx="25" fill="none" stroke="url(#shimmer)" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-labelledby="title desc">
+  <title id="title">Mahad Sajjad — full-stack developer</title>
+  <desc id="desc">A profile banner with Mahad Sajjad's name, a short tagline, and a stylized product dashboard.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#080f1e"/>
+      <stop offset="1" stop-color="#11152c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#74e5d6"/>
+      <stop offset="1" stop-color="#9c91f5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#594dcb" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#594dcb" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#26334a" stroke-width="1"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1200" height="440" rx="24"/></clipPath>
+    <clipPath id="window"><rect x="728" y="62" width="410" height="316" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="440" fill="url(#background)"/>
+    <rect width="1200" height="440" fill="url(#grid)" opacity=".55"/>
+    <circle cx="980" cy="160" r="350" fill="url(#glow)"/>
+    <path d="M0 0H1200" stroke="url(#accent)" stroke-width="6"/>
+    <path d="M670 48V392" stroke="#374254" stroke-width="1"/>
+    <circle cx="670" cy="221" r="4" fill="#74e5d6"/>
+
+    <text x="64" y="70" fill="#74e5d6" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="4">FULL-STACK DEVELOPER</text>
+    <text x="58" y="181" fill="#f6f8ff" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="800" letter-spacing="-6">MAHAD</text>
+    <text x="58" y="277" fill="#f6f8ff" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="800" letter-spacing="-6">SAJJAD<tspan fill="#74e5d6">.</tspan></text>
+    <rect x="64" y="306" width="54" height="4" rx="2" fill="url(#accent)"/>
+    <text x="64" y="345" fill="#c0ccdc" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500">From database to deployment.</text>
+    <text x="64" y="405" fill="#93a5bb" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1">MAHADSAJJAD.VERCEL.APP</text>
+
+    <rect x="728" y="62" width="410" height="316" rx="18" fill="#151f31" stroke="#344358" stroke-width="2"/>
+    <g clip-path="url(#window)">
+      <rect x="729" y="63" width="408" height="48" fill="#1b273a"/>
+      <path d="M728 111H1138" stroke="#344358"/>
+      <circle cx="754" cy="87" r="5" fill="#fb7185"/>
+      <circle cx="772" cy="87" r="5" fill="#fbbf24"/>
+      <circle cx="790" cy="87" r="5" fill="#74e5d6"/>
+      <rect x="856" y="78" width="166" height="18" rx="9" fill="#26364b"/>
+      <text x="870" y="91" fill="#93a5bb" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing=".5">product / overview</text>
+
+      <rect x="729" y="112" width="76" height="266" fill="#121c2c"/>
+      <path d="M805 112V378" stroke="#344358"/>
+      <rect x="748" y="136" width="38" height="6" rx="3" fill="#74e5d6"/>
+      <rect x="748" y="158" width="26" height="5" rx="2.5" fill="#40536a"/>
+      <rect x="748" y="178" width="32" height="5" rx="2.5" fill="#40536a"/>
+      <rect x="748" y="198" width="22" height="5" rx="2.5" fill="#40536a"/>
+      <circle cx="766" cy="344" r="13" fill="url(#accent)"/>
+
+      <text x="829" y="146" fill="#f6f8ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Project overview</text>
+      <text x="829" y="167" fill="#93a5bb" font-family="Arial, Helvetica, sans-serif" font-size="12">Design  /  build  /  ship</text>
+
+      <rect x="829" y="188" width="132" height="67" rx="11" fill="#1b293d" stroke="#344358"/>
+      <text x="843" y="211" fill="#93a5bb" font-family="Arial, Helvetica, sans-serif" font-size="11">PRODUCT</text>
+      <rect x="843" y="224" width="64" height="11" rx="5.5" fill="#74e5d6"/>
+      <rect x="843" y="241" width="94" height="4" rx="2" fill="#40536a"/>
+
+      <rect x="972" y="188" width="142" height="67" rx="11" fill="#1b293d" stroke="#344358"/>
+      <text x="986" y="211" fill="#93a5bb" font-family="Arial, Helvetica, sans-serif" font-size="11">STATUS</text>
+      <circle cx="992" cy="230" r="4" fill="#74e5d6"/>
+      <text x="1002" y="234" fill="#f6f8ff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Shipped</text>
+
+      <rect x="829" y="269" width="285" height="87" rx="11" fill="#1b293d" stroke="#344358"/>
+      <path d="M846 336H1097M846 314H1097M846 292H1097" stroke="#26334a" stroke-width="1"/>
+      <path d="M846 329L879 320L911 326L944 305L977 311L1010 293L1043 301L1075 284L1097 288" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="1075" cy="284" r="5" fill="#74e5d6"/>
+    </g>
+    <rect x="1" y="1" width="1198" height="438" rx="23" fill="none" stroke="#334155" stroke-width="2"/>
+  </g>
 </svg>

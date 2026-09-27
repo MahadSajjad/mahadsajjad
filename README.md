@@ -1,60 +1,38 @@
-
-<!-- ============================================================= -->
-<!-- BANNER: commit dark.svg and light.svg into an /assets folder   -->
-<!-- in this repo. GitHub auto-switches based on the viewer's theme. -->
-<!-- ============================================================= -->
 <picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/dark.svg">
-  <img alt="Mahad Sajjad — Full-Stack MERN Developer" src="./assets/dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/dark.svg" />
+  <img src="./assets/light.svg" alt="Mahad Sajjad — full-stack developer, from database to deployment" width="100%" />
 </picture>
 
-# Hi👋
+# Hi, I'm Mahad Sajjad
 
-I am a Full-stack MERN developer. I ship real full-stack products, not tutorials. SaaS platforms, POS systems, and admin dashboards, built end-to-end and mostly solo, from database schema to deployment.
+I'm a full-stack developer focused on turning ideas into useful web products. I build across the stack, from data models and APIs to interfaces and deployment. My work includes logistics software, point-of-sale systems, property platforms, and client websites.
 
-🌐 **Portfolio:** [mahadsajjad.vercel.app](https://mahadsajjad.vercel.app)
-📩 **Open to freelance/contract work** — reach out via [email](mailto:mahadsajjad787@gmail.com)
+**[Portfolio](https://mahadsajjad.vercel.app)** · **[Projects](https://mahadsajjad.vercel.app/projects)** · **[Email me](mailto:web.mahadsajjad787@gmail.com)**
 
----
+## What I work on
 
-### What I build
-- **Full-stack web apps** — architecture, APIs, edge cases, frontends that hold up under real use
-- **SaaS platforms** — auth, roles, billing logic, recurring-data modeling
-- **POS systems** — payment/discount/tax logic, barcode architecture, bulk operations
-- **Admin dashboards** — URL-driven state, optimistic UI, drag-to-reorder, rich-text editing
-- **APIs & backends** — Express + MongoDB, schema design, Zod validation, JWT auth
+- **Full-stack products:** dashboards, authentication, business workflows, and responsive interfaces.
+- **Backend systems:** APIs, MongoDB data models, validation, and integrations.
+- **Client projects:** translating business needs into working software and shipping it end to end.
 
-### Tech stack
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Ant Design](https://img.shields.io/badge/Ant_Design-0170FE?style=flat-square&logo=antdesign&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=black)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-![Zod](https://img.shields.io/badge/Zod-3E67B1?style=flat-square&logo=zod&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05133?style=flat-square&logo=git&logoColor=white)
+## Selected projects
 
-### Featured projects
-| Project | What it is | Stack |
-|---|---|---|
-| [Metafessional](https://metafessional.com) | My own agency's public site | Next.js · Shadcn · Framer Motion |
-| [Transiqi](https://transiqi.netlify.app) | Multi-language vehicle & logistics management system for a Saudi Arabia-based client | MERN · Ant Design · i18n |
-| [POS System](https://fmse.vercel.app) | Inventory management with returns and expense tracking | React · Bootstrap · Supabase |
-| [Get Set Properties](https://getsetproperties.com) | Real-estate platform with a listings management dashboard | React · Tailwind · Supabase |
-| [Al Fajr](https://alfajrcontractingco.vercel.app) | Marketing site for a Saudi Arabia-based contracting company | React · Tailwind · Supabase |
-| Nutrista | Booking + admin platform for a nutritionist | MERN · Ant Design |
+| Project                                             | What I built                                                                             | Stack                             |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------- |
+| [Transiqi](https://transiqi.netlify.app/auth/login) | Multilingual vehicle and logistics dashboard with expiry tracking and PDF/Excel exports. | MERN, Ant Design, i18n            |
+| [POS System](https://fmse.vercel.app/)              | Inventory and sales system with product returns and expense tracking.                    | React, Bootstrap, Supabase        |
+| [Get Set Properties](https://getsetproperties.com/) | Property listings, a management dashboard, and buyer inquiry flows.                      | React, Tailwind CSS, Supabase     |
+| [Metafessional](https://metafessional.com/)         | Public website for my agency.                                                            | Next.js, shadcn/ui, Framer Motion |
+| [Al Fajr](https://alfajrcontractingco.com/)         | Contracting company website with a Supabase-backed contact system.                       | React, Tailwind CSS, Supabase     |
 
-More on [my portfolio](https://mahadsajjad.vercel.app/projects).
+See more work on [my portfolio](https://mahadsajjad.vercel.app/projects).
 
-### Connect
-<!-- TODO: replace YOUR_NUMBER_HERE with your number in intl format, e.g. 923001234567 -->
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/03147299331)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahad-sajjad-b34826337/)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/mahadvizz/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:mahadsajjad787@gmail.com)
+## Tools I use
+
+- **Frontend:** JavaScript, TypeScript, React, Next.js, Tailwind CSS, Ant Design
+- **Backend and data:** Node.js, Express, MongoDB, Supabase, Firebase, Zod
+- **Workflow:** Git, Vercel
+
+## Get in touch
+
+I'm open to freelance and contract projects. Reach me through [email](mailto:web.mahadsajjad787@gmail.com), [LinkedIn](https://www.linkedin.com/in/mahad-sajjad-b34826337/), or [WhatsApp](https://wa.me/923244199929).
