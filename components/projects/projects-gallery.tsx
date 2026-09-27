@@ -17,7 +17,6 @@ import zenvix from './images/Zenvix.png';
 
 const GALLERY_ITEMS = [
   { image: emiratesFront.src, text: 'Emirates Front' },
-  { image: emiratesFrontSecondary.src, text: 'Emirates Front Services' },
   { image: zenvix.src, text: 'Zenvix' },
   { image: footLandShoes.src, text: 'Foot Land Shoes' },
   { image: pos.src, text: 'POS System' },
