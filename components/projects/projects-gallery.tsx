@@ -5,14 +5,22 @@ import CircularGallery from './CircularGallery';
 
 import alFajr from './images/al-fajr.png';
 import aureolea from './images/aureolea.png';
+import emiratesFront from './images/emiratesfront.png';
+import emiratesFrontSecondary from './images/emiratesfront2.png';
 import fashionThread from './images/fashionthread.png';
+import footLandShoes from './images/FootLandShoes.png';
 import getSetProperties from './images/getsetproperties.png';
 import metafessional from './images/Metafessional.png';
 import nutrista from './images/nutrista.png';
 import pos from './images/pos.png';
 import transiqi from './images/transiqi.png';
+import zenvix from './images/Zenvix.png';
 
 const GALLERY_ITEMS = [
+  { image: emiratesFront.src, text: 'Emirates Front' },
+  { image: emiratesFrontSecondary.src, text: 'Emirates Front Services' },
+  { image: zenvix.src, text: 'Zenvix' },
+  { image: footLandShoes.src, text: 'Foot Land Shoes' },
   { image: pos.src, text: 'POS System' },
   { image: getSetProperties.src, text: 'Get Set Properties' },
   { image: fashionThread.src, text: 'Fashion Thread' },
