@@ -8,7 +8,6 @@ import { FadeIn } from "@/components/ui/motion-primitives";
 import alFajr from "./images/al-fajr.png";
 import aureolea from "./images/aureolea.png";
 import emiratesFront from "./images/emiratesfront.png";
-import emiratesFrontSecondary from "./images/emiratesfront2.png";
 import fashionThread from "./images/fashionthread.png";
 import footLandShoes from "./images/FootLandShoes.png";
 import getSetProperties from "./images/getsetproperties.png";
@@ -40,12 +39,9 @@ const PROJECTS: Project[] = [
     title: "A website for a Saudi general contracting company.",
     description:
       "Built with direct WhatsApp support and a contact form that sends inquiry details straight to WhatsApp.",
-    meta: "Contracting website · WhatsApp integration",
+    meta: "React · Tailwind CSS · WhatsApp integration",
     image: emiratesFront,
     imageAlt: "Emirates Front contracting website home page",
-    secondaryImage: emiratesFrontSecondary,
-    secondaryImageAlt: "Emirates Front construction services page",
-    href: "https://emiratedfront.com/",
   },
   {
     id: "zenvix",
@@ -59,18 +55,7 @@ const PROJECTS: Project[] = [
     imageAlt: "Zenvix agency website shown on a laptop",
     href: "https://zenvix.net/",
   },
-  {
-    id: "foot-land-shoes",
-    icon: ShoppingBag,
-    iconLabel: "Foot Land Shoes",
-    title: "A Shopify storefront for a footwear brand.",
-    description:
-      "Handled the color theme, storefront and product design, theme implementation, and domain connection.",
-    meta: "Shopify · Store design · Theme implementation",
-    image: footLandShoes,
-    imageAlt: "Foot Land Shoes Shopify storefront shown on a laptop",
-    href: "https://footlandshoes.store/",
-  },
+
   {
     id: "al-fajr",
     icon: Moon,
@@ -82,6 +67,18 @@ const PROJECTS: Project[] = [
     image: alFajr,
     imageAlt: "Al Fajr project",
     href: "https://alfajrcontractingco.com/",
+  },
+  {
+    id: "transiqi",
+    icon: Truck,
+    iconLabel: "Transiqi",
+    title: "A multi-language vehicle and logistics management system.",
+    description:
+      "Vehicle records with registration, insurance, and MVPI expiry tracking, date-based filtering and PDF/Excel export. Supports multiple languages including English, Urdu, and Arabic.",
+    meta: "MERN · Ant Design · i18n",
+    image: transiqi,
+    imageAlt: "Transiqi logistics dashboard",
+    href: "https://transiqi.netlify.app/auth/login",
   },
   {
     id: "pos",
@@ -96,6 +93,18 @@ const PROJECTS: Project[] = [
     href: "https://fmse.vercel.app/",
   },
   {
+    id: "foot-land-shoes",
+    icon: ShoppingBag,
+    iconLabel: "Foot Land Shoes",
+    title: "A Shopify storefront for a footwear brand.",
+    description:
+      "Handled the color theme, storefront and product design, theme implementation, and domain connection.",
+    meta: "Shopify · Store design · Theme implementation",
+    image: footLandShoes,
+    imageAlt: "Foot Land Shoes Shopify storefront shown on a laptop",
+    href: "https://footlandshoes.store/",
+  },
+  {
     id: "getsetproperties",
     icon: Building2,
     iconLabel: "Get Set Properties",
@@ -106,18 +115,6 @@ const PROJECTS: Project[] = [
     image: getSetProperties,
     imageAlt: "Get Set Properties real-estate platform",
     href: "https://getsetproperties.com/",
-  },
-  {
-    id: "transiqi",
-    icon: Truck,
-    iconLabel: "Transiqi",
-    title: "A multi-language vehicle and logistics management system.",
-    description:
-      "Vehicle records with registration, insurance, and MVPI expiry tracking, date-based filtering and PDF/Excel export. Supports multiple languages including English, Urdu, and Arabic.",
-    meta: "MERN · Ant Design · i18n",
-    image: transiqi,
-    imageAlt: "Transiqi logistics dashboard",
-    href: "https://transiqi.netlify.app/auth/login",
   },
   {
     id: "metafessional",
@@ -254,22 +251,6 @@ function ProjectCard({
         </div>
       </div>
 
-      {project.secondaryImage && project.secondaryImageAlt ? (
-        <div
-          className="project-card__image ring-foreground/5 relative w-full overflow-hidden rounded-2xl bg-foreground/5 ring-1"
-          style={{ aspectRatio: project.secondaryImage.width / project.secondaryImage.height }}
-        >
-          <div className="project-card__image-inner">
-            <Image
-              src={project.secondaryImage}
-              alt={project.secondaryImageAlt}
-              fill
-              sizes="(min-width: 1024px) 540px, (min-width: 768px) 45vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      ) : null}
 
       <div className="flex flex-col gap-2.5 px-1 pb-1">
         <h3 className="text-[20px] font-medium leading-[1.2] tracking-tight text-foreground sm:text-[22px]">

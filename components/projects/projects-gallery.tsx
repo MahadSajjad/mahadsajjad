@@ -6,7 +6,6 @@ import CircularGallery from './CircularGallery';
 import alFajr from './images/al-fajr.png';
 import aureolea from './images/aureolea.png';
 import emiratesFront from './images/emiratesfront.png';
-import emiratesFrontSecondary from './images/emiratesfront2.png';
 import fashionThread from './images/fashionthread.png';
 import footLandShoes from './images/FootLandShoes.png';
 import getSetProperties from './images/getsetproperties.png';
