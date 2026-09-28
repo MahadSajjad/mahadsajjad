@@ -1,5 +1,12 @@
 import { siteConfig } from "@/lib/metadata";
 
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+} as const;
+
 export const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",

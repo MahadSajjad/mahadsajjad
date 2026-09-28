@@ -3,36 +3,29 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "Mahad Sajjad",
   description:
-    "MERN stack developer. I ship real full-stack products, not tutorials.",
-  url: "https://mahadsajjad.vercel.app",
+    "Mahad Sajjad is a full-stack developer building React and MERN web apps, SaaS dashboards, and Shopify stores for businesses. Explore projects and get in touch.",
+  url: "https://mahad.sitehookz.com",
   ogImage: "/logo.png",
   authors: [
     {
       name: "Mahad Sajjad",
-      url: "https://mahadsajjad.vercel.app",
+      url: "https://mahad.sitehookz.com",
     },
-  ],
-  keywords: [
-    "Mahad Sajjad",
-    "MERN stack developer",
-    "full-stack developer",
-    "React",
-    "Express",
-    "MongoDB",
-    "Node.js",
   ],
 } as const;
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: `Full-Stack Web Developer | ${siteConfig.name}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [...siteConfig.keywords],
   authors: [...siteConfig.authors],
   publisher: siteConfig.name,
+  verification: {
+    google: "ODFo7HkeCMftaACVM-Gd7WLV5EREou7xe8J8oMZYjwM",
+  },
   robots: {
     index: true,
     follow: true,
@@ -51,17 +44,23 @@ export const baseMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: `Full-Stack Web Developer | ${siteConfig.name}`,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
       {
         url: siteConfig.ogImage,
-        width: 1200,
-        height: 1200,
+        width: 2000,
+        height: 2000,
         alt: siteConfig.name,
       },
     ],
+  },
+  twitter: {
+    card: "summary",
+    title: `Full-Stack Web Developer | ${siteConfig.name}`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   manifest: "/site.webmanifest",
 };
@@ -98,11 +97,17 @@ export function createMetadata({
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 1200,
+          width: 2000,
+          height: 2000,
           alt: title ?? siteConfig.name,
         },
       ],
+    },
+    twitter: {
+      card: "summary",
+      title: title ?? siteConfig.name,
+      description: description ?? siteConfig.description,
+      images: [ogImage],
     },
     ...(noIndex && {
       robots: {

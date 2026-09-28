@@ -6,12 +6,12 @@ import { Projects } from "@/components/projects/projects";
 import { Services } from "@/components/services/services";
 import { Testimonials } from "@/components/testimonials/testimonials";
 import { createMetadata, siteConfig } from "@/lib/metadata";
-import { personJsonLd } from "@/lib/structured-data";
+import { personJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: `${siteConfig.name} — Full-Stack MERN Developer`,
+  title: "Full-Stack Web Developer",
   description: siteConfig.description,
   path: "/",
 });
@@ -22,6 +22,10 @@ export default function HomePage(): ReactNode {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <script
         type="application/ld+json"

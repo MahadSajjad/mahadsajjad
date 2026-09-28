@@ -10,8 +10,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: "About",
-  description: "About me, background, and how to get in touch.",
+  title: "About & Experience",
+  description:
+    "Learn about Mahad Sajjad's full-stack development background, MERN stack skills, experience, education, and approach to building client projects.",
   path: "/about",
 });
 
@@ -45,7 +46,7 @@ export default function AboutPage(): ReactNode {
                 <strong className="font-semibold text-foreground">solo</strong>{" "}
                 — which means I own every decision, every tradeoff, every
                 deadline. Product thinking, technical execution, client
-                communication — all of it. That's made me a better developer
+                communication — all of it. That&rsquo;s made me a better developer
                 than any tutorial could.
               </p>
               <p>
