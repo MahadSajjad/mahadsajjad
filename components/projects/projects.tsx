@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/ui/motion-primitives";
 
 import alFajr from "./images/al-fajr.png";
 import aureolea from "./images/aureolea.png";
+import eleganceUK from "./images/EleganceUK.webp";
 import emiratesFront from "./images/emiratesfront.png";
 import fashionThread from "./images/fashionthread.png";
 import footLandShoes from "./images/FootLandShoes.png";
@@ -44,18 +45,29 @@ const PROJECTS: Project[] = [
     imageAlt: "Emirates Front contracting website home page",
   },
   {
-    id: "zenvix",
-    icon: Globe,
-    iconLabel: "Zenvix",
-    title: "A frontend website for an SEO-focused software house.",
+    id: "the-elegance-bed-company",
+    icon: ShoppingBag,
+    iconLabel: "The Elegance Bed Company",
+    title: "A Shopify store for a UK bed and mattress company.",
     description:
-      "Designed and built the responsive frontend to present the agency, its services, and its work.",
-    meta: "React · Tailwind CSS · Frontend",
-    image: zenvix,
-    imageAlt: "Zenvix agency website shown on a laptop",
-    href: "https://zenvix.net/",
+      "Designed a storefront that showcases beds, mattresses, accessories, and colour swatches with clear shopping and contact options.",
+    meta: "Shopify · Storefront design · E-commerce",
+    image: eleganceUK,
+    imageAlt: "The Elegance Bed Company Shopify storefront shown on a laptop",
+    href: "https://theelegancebedcompany.co.uk/",
   },
-
+  {
+    id: "pos",
+    icon: ScanBarcode,
+    iconLabel: "POS System",
+    title: "A point-of-sale system built for inventory management.",
+    description:
+      "Core inventory management, single and multiple product returns, and expense tracking.",
+    meta: "React · Bootstrap · Supabase",
+    image: pos,
+    imageAlt: "POS system dashboard",
+    href: "https://fmse.vercel.app/",
+  },
   {
     id: "al-fajr",
     icon: Moon,
@@ -69,6 +81,18 @@ const PROJECTS: Project[] = [
     href: "https://alfajrcontractingco.com/",
   },
   {
+    id: "zenvix",
+    icon: Globe,
+    iconLabel: "Zenvix",
+    title: "A frontend website for an SEO-focused software house.",
+    description:
+      "Designed and built the responsive frontend to present the agency, its services, and its work.",
+    meta: "React · Tailwind CSS · Frontend",
+    image: zenvix,
+    imageAlt: "Zenvix agency website shown on a laptop",
+    href: "https://zenvix.net/",
+  },
+  {
     id: "transiqi",
     icon: Truck,
     iconLabel: "Transiqi",
@@ -79,18 +103,6 @@ const PROJECTS: Project[] = [
     image: transiqi,
     imageAlt: "Transiqi logistics dashboard",
     href: "https://transiqi.netlify.app/auth/login",
-  },
-  {
-    id: "pos",
-    icon: ScanBarcode,
-    iconLabel: "POS System",
-    title: "A point-of-sale system built for inventory management.",
-    description:
-      "Core inventory management, single and multiple product returns, and expense tracking.",
-    meta: "React · Bootstrap · Supabase",
-    image: pos,
-    imageAlt: "POS system dashboard",
-    href: "https://fmse.vercel.app/",
   },
   {
     id: "foot-land-shoes",
@@ -175,7 +187,7 @@ export function Projects({
   withHeadline = false,
   viewMoreVisible = false,
 }: ProjectsProps): ReactNode {
-  const items = viewMoreVisible ? PROJECTS.slice(0, 4) : PROJECTS;
+  const items = viewMoreVisible ? PROJECTS.slice(0, 6) : PROJECTS;
 
   return (
     <section className="relative w-full">

@@ -5,6 +5,7 @@ import CircularGallery from './CircularGallery';
 
 import alFajr from './images/al-fajr.png';
 import aureolea from './images/aureolea.png';
+import eleganceUK from './images/EleganceUK.webp';
 import emiratesFront from './images/emiratesfront.png';
 import fashionThread from './images/fashionthread.png';
 import footLandShoes from './images/FootLandShoes.png';
@@ -19,6 +20,7 @@ const GALLERY_ITEMS = [
   { image: emiratesFront.src, text: 'Emirates Front' },
   { image: zenvix.src, text: 'Zenvix' },
   { image: footLandShoes.src, text: 'Foot Land Shoes' },
+  { image: eleganceUK.src, text: 'The Elegance Bed Company' },
   { image: pos.src, text: 'POS System' },
   { image: getSetProperties.src, text: 'Get Set Properties' },
   { image: fashionThread.src, text: 'Fashion Thread' },
