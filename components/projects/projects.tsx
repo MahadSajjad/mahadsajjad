@@ -259,7 +259,6 @@ function ProjectCard({
             fill
             sizes="(min-width: 1024px) 540px, (min-width: 768px) 45vw, 100vw"
             className="object-cover"
-            priority={index < 2}
           />
         </div>
       </div>
