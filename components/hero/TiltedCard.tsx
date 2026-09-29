@@ -110,11 +110,13 @@ export default function TiltedCard({
         className="relative [transform-style:preserve-3d]"
         style={{ width: imageWidth, height: imageHeight, rotateX, rotateY, scale }}
       >
-        <motion.img
+        <Image
           src={imageSrc}
           alt={altText}
+          fill
+          sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
+          preload
           className={`absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)] ${imageClassName}`}
-          style={{ width: imageWidth, height: imageHeight }}
         />
 
         {displayOverlayContent && overlayContent && (

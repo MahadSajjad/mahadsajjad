@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 
 import { HeroCtas } from "./hero-ctas";
 import { FadeIn, ScaleUnblur } from "@/components/ui/motion-primitives";
-import { RotatingText } from "@/components/ui/rotating-text";
 import TiltedCard from "./TiltedCard";
 
 const PORTRAIT_SRC = "/mahad.webp";
@@ -18,22 +17,8 @@ export function Hero(): ReactNode {
             </p>
 
             <h1 className="flex flex-col text-[2.75rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[2.5rem] lg:text-[3.65rem]">
-              <span className="whitespace-nowrap">Web & App</span>
-              <RotatingText
-                texts={["Developer", "Designer", "Engineer" ]}
-                mainClassName="w-fit justify-center overflow-hidden rounded-lg py-0.5 text-foreground md:py-1"
-                staggerFrom="last"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-1.5 sm:pb-2 md:pb-2.5"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={4000}
-                splitBy="characters"
-                auto
-                loop
-              />
+              <span>Full-Stack Web</span>
+              <span>&amp; App Developer</span>
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
@@ -47,7 +32,7 @@ export function Hero(): ReactNode {
             <div className="relative aspect-square w-full md:max-w-105">
               <TiltedCard
                 imageSrc={PORTRAIT_SRC}
-                altText="mahad portrait"
+                altText="Portrait of Mahad Sajjad, full-stack web developer"
                 containerHeight="100%"
                 containerWidth="100%"
                 imageHeight="100%"
