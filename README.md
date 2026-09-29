@@ -8,7 +8,7 @@
 
 I'm a full-stack developer focused on turning ideas into useful web products. I build across the stack, from data models and APIs to interfaces and deployment. My work includes logistics software, point-of-sale systems, property platforms, and client websites.
 
-**[Portfolio](https://mahadsajjad.vercel.app)** · **[Projects](https://mahadsajjad.vercel.app/projects)** · **[Email me](mailto:web.mahadsajjad787@gmail.com)**
+**[Portfolio](https://mahad.sitehookz.com)** · **[Projects](https://mahad.sitehookz.com/projects)** · **[Email me](mailto:web.mahadsajjad787@gmail.com)**
 
 ## What I work on
 
@@ -28,7 +28,7 @@ I'm a full-stack developer focused on turning ideas into useful web products. I 
 | [Emirates Front](https://emiratesfront.com/)         | Contracting company website with a whatsapp base contact system.                       | React, Tailwind CSS, Whatsapp     |
 | [The Elegance bedding UK](https://theelegancebedcompany.co.uk/)         |  Shopify store based in uk.                       | Shopify     |
 
-See more work on [my portfolio](https://mahadsajjad.vercel.app/projects).
+See more work on [my portfolio](https://mahad.sitehookz.com/projects).
 
 ## Tools I use
 

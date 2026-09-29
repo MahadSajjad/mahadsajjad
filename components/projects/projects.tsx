@@ -106,18 +106,6 @@ const PROJECTS: Project[] = [
     href: "https://transiqi.netlify.app/auth/login",
   },
   {
-    id: "foot-land-shoes",
-    icon: ShoppingBag,
-    iconLabel: "Foot Land Shoes",
-    title: "A Shopify storefront for a footwear brand.",
-    description:
-      "Handled the color theme, storefront and product design, theme implementation, and domain connection.",
-    meta: "Shopify · Store design · Theme implementation",
-    image: footLandShoes,
-    imageAlt: "Foot Land Shoes Shopify storefront shown on a laptop",
-    href: "https://footlandshoes.store/",
-  },
-  {
     id: "getsetproperties",
     icon: Building2,
     iconLabel: "Get Set Properties",
@@ -142,6 +130,18 @@ const PROJECTS: Project[] = [
     href: "https://metafessional.com/",
   },
   {
+    id: "foot-land-shoes",
+    icon: ShoppingBag,
+    iconLabel: "Foot Land Shoes",
+    title: "A Shopify storefront for a footwear brand.",
+    description:
+      "Handled the color theme, storefront and product design, theme implementation, and domain connection.",
+    meta: "Shopify · Store design · Theme implementation",
+    image: footLandShoes,
+    imageAlt: "Foot Land Shoes Shopify storefront shown on a laptop",
+    href: "https://footlandshoes.store/",
+  },
+  {
     id: "fashionthread",
     icon: ShoppingBag,
     iconLabel: "Fashion Thread",
@@ -151,7 +151,7 @@ const PROJECTS: Project[] = [
     meta: "Shopify",
     image: fashionThread,
     imageAlt: "Fashion Thread e-commerce store",
-    href: "http://fashionthread.shop/",
+    href: "https://fashionthread.shop/",
   },
   {
     id: "nutrista",

@@ -43,7 +43,7 @@ export const baseMetadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.url,
+    url: `${siteConfig.url}/`,
     title: `Full-Stack Web Developer | ${siteConfig.name}`,
     description: siteConfig.description,
     siteName: siteConfig.name,

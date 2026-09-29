@@ -4,7 +4,7 @@ export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: siteConfig.name,
-  url: siteConfig.url,
+  url: `${siteConfig.url}/`,
 } as const;
 
 export const personJsonLd = {
@@ -13,7 +13,7 @@ export const personJsonLd = {
   name: siteConfig.name,
   jobTitle: "Full-Stack Developer",
   description: siteConfig.description,
-  url: siteConfig.url,
+  url: `${siteConfig.url}/`,
   image: `${siteConfig.url}/mahad.webp`,
   email: "mailto:web.mahadsajjad787@gmail.com",
   sameAs: [

@@ -24,8 +24,7 @@ function autoBind(instance: object) {
   });
 }
 
-const DEFAULT_FONT = 'bold 30px Figtree';
-const DEFAULT_FONT_URL = 'https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap';
+const DEFAULT_FONT = 'bold 30px sans-serif';
 
 function deriveFontFamilyFromUrl(url: string) {
   const fileName = (url.split('/').pop() || 'custom-font').split('?')[0] ?? 'custom-font';
@@ -71,13 +70,8 @@ async function loadCustomFont(fontUrl: string) {
 }
 
 async function resolveFont(font: string, fontUrl?: string) {
-  const effectiveUrl = fontUrl || (font === DEFAULT_FONT ? DEFAULT_FONT_URL : null);
-  if (!effectiveUrl) {
-    if (document.fonts?.load) {
-      try { await document.fonts.load(font); await document.fonts.ready; } catch { /* ignore */ }
-    }
-    return font;
-  }
+  const effectiveUrl = fontUrl;
+  if (!effectiveUrl) return font;
   try {
     const family = await loadCustomFont(effectiveUrl);
     const sizeMatch = font.match(/^\s*(.*?\d+px)/);
@@ -260,7 +254,7 @@ class App {
 
   constructor(
     container: HTMLElement,
-    { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree', scrollSpeed = 2, scrollEase = 0.05, imageScale = 1 }:
+    { items, bend, textColor = '#ffffff', borderRadius = 0, font = DEFAULT_FONT, scrollSpeed = 2, scrollEase = 0.05, imageScale = 1 }:
     { items?: { image: string; text: string }[] | undefined; bend?: number | undefined; textColor?: string | undefined; borderRadius?: number | undefined; font?: string | undefined; scrollSpeed?: number | undefined; scrollEase?: number | undefined; imageScale?: number | undefined } = {}
   ) {
     document.documentElement.classList.remove('no-js');
@@ -399,7 +393,7 @@ interface CircularGalleryProps {
 
 export default function CircularGallery({
   items, bend = 3, textColor = '#ffffff', borderRadius = 0.05,
-  font = 'bold 30px Figtree', fontUrl, scrollSpeed = 2, scrollEase = 0.05, imageScale = 1
+  font = DEFAULT_FONT, fontUrl, scrollSpeed = 2, scrollEase = 0.05, imageScale = 1
 }: CircularGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
