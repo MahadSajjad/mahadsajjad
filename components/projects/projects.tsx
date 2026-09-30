@@ -43,6 +43,7 @@ const PROJECTS: Project[] = [
     meta: "React · Tailwind CSS · WhatsApp integration",
     image: emiratesFront,
     imageAlt: "Emirates Front contracting website home page",
+    href: "https://emiratesfront.com",
   },
   {
     id: "al-fajr",
