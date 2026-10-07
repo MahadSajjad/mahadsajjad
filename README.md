@@ -1,5 +1,3 @@
-
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/dark.svg" />
   <img src="./assets/light.svg" alt="Mahad Sajjad — full-stack developer, from database to deployment" width="100%" />
