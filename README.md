@@ -5,7 +5,7 @@
 
 # Hi, I'm Mahad Sajjad
 
-I'm a full-stack developer focused on turning ideas into useful web products. I build across the stack, from data models and APIs to interfaces and deployment. My work includes logistics software, point-of-sale systems, property platforms, and client websites.
+I'm a full-stack developer focused on turning ideas into useful web and app products. I build across the stack, from data models and APIs to interfaces and deployment. My work includes logistics software, point-of-sale systems, property platforms, and client websites.
 
 **[Portfolio](https://mahad.sitehookz.com)** · **[Projects](https://mahad.sitehookz.com/projects)** · **[Email me](mailto:web.mahadsajjad787@gmail.com)**
 
