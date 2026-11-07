@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
-import Lenis from "lenis";
 import { features } from "@/lib/config";
+import { useEnhancedVisuals } from "@/lib/rendering-preferences";
 import { setLenis } from "@/lib/smooth-scroll-store";
 
 const LENIS_OPTIONS = {
@@ -15,54 +15,77 @@ const LENIS_OPTIONS = {
   touchMultiplier: 2,
 };
 
-export function SmoothScroll({
-  children,
-}: {
-  children: ReactNode;
-}): ReactNode {
+export function SmoothScroll({ children }: { children: ReactNode }): ReactNode {
+  const enhanced = useEnhancedVisuals();
+
   useEffect(() => {
-    if (!features.smoothScroll) return;
+    if (!features.smoothScroll || !enhanced) return;
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
 
-    if (prefersReducedMotion) return;
+    void import("lenis").then(({ default: Lenis }) => {
+      if (disposed) return;
+      const lenis = new Lenis(LENIS_OPTIONS);
+      setLenis(lenis);
+      let rafId = 0;
 
-    const lenis = new Lenis(LENIS_OPTIONS);
-    setLenis(lenis);
+      function raf(time: number): void {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      }
 
-    function raf(time: number): void {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+      function onVisibilityChange(): void {
+        cancelAnimationFrame(rafId);
+        if (document.visibilityState === "visible") {
+          lenis.start();
+          rafId = requestAnimationFrame(raf);
+        } else {
+          lenis.stop();
+        }
+      }
 
-    const rafId = requestAnimationFrame(raf);
+      function handleAnchorClick(e: MouseEvent): void {
+        if (
+          e.defaultPrevented ||
+          e.metaKey ||
+          e.ctrlKey ||
+          e.shiftKey ||
+          e.altKey
+        )
+          return;
+        const target = e.target;
+        if (!(target instanceof Element)) return;
+        const anchor = target.closest<HTMLAnchorElement>('a[href^="#"]');
+        if (!anchor) return;
+        const href = anchor.getAttribute("href");
+        if (!href || href === "#") return;
+        const element = document.getElementById(
+          decodeURIComponent(href.slice(1))
+        );
+        if (!element) return;
+        e.preventDefault();
+        lenis.scrollTo(element, { offset: -100 });
+      }
 
-    function handleAnchorClick(e: MouseEvent): void {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest('a[href^="#"]');
-      if (!anchor) return;
+      onVisibilityChange();
+      document.addEventListener("visibilitychange", onVisibilityChange);
+      document.addEventListener("click", handleAnchorClick);
 
-      const href = anchor.getAttribute("href");
-      if (!href || href === "#") return;
-
-      const element = document.querySelector(href);
-      if (!element) return;
-
-      e.preventDefault();
-      lenis.scrollTo(element as HTMLElement, { offset: -100 });
-    }
-
-    document.addEventListener("click", handleAnchorClick);
+      cleanup = () => {
+        document.removeEventListener("click", handleAnchorClick);
+        document.removeEventListener("visibilitychange", onVisibilityChange);
+        cancelAnimationFrame(rafId);
+        lenis.destroy();
+        setLenis(null);
+      };
+    });
 
     return () => {
-      document.removeEventListener("click", handleAnchorClick);
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
-      setLenis(null);
+      disposed = true;
+      cleanup?.();
     };
-  }, []);
+  }, [enhanced]);
 
   return <>{children}</>;
 }

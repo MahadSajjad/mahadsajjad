@@ -138,23 +138,15 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
     const el = ref.current;
     if (!el) return;
 
-    // On phones/touch, render at a lower internal resolution and cap the
-    // fragment-shader iteration count. Keeps the effect but slashes GPU fill
-    // and per-pixel loop cost. Desktop stays full quality.
-    const isMobile = window.matchMedia(
-      "(max-width: 767px), (pointer: coarse)"
-    ).matches;
-    const renderScale = isMobile ? 0.6 : 1;
-    const maxIterations = isMobile ? 6 : 24;
+    const renderScale = 0.75;
+    const maxIterations = 10;
 
     const r = new Renderer({
       dpr: Math.min(window.devicePixelRatio || 1, 1),
       alpha: false,
       antialias: false,
-      powerPreference: "high-performance",
-      // Keep the drawing buffer so OS screenshots capture the shader
-      // instead of rendering it black.
-      preserveDrawingBuffer: true,
+      powerPreference: "low-power",
+      preserveDrawingBuffer: false,
     });
     const gl = r.gl;
     gl.canvas.style.width = "100%";
@@ -190,6 +182,10 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
         v: gl.getShaderInfoLog(p.vertexShader),
         f: gl.getShaderInfoLog(p.fragmentShader),
       });
+      geo.remove();
+      p.remove();
+      el.removeChild(gl.canvas);
+      gl.getExtension("WEBGL_lose_context")?.loseContext();
       return;
     }
 
@@ -211,18 +207,21 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
     ro.observe(el);
 
     let raf = 0;
-    let visible = true;
-    let onScreen = true;
+    let visible = document.visibilityState === "visible";
+    let onScreen = false;
+    let lastFrame = -Infinity;
     const t0 = performance.now();
 
     const onVisibility = (): void => {
       visible = document.visibilityState === "visible";
+      schedule();
     };
     document.addEventListener("visibilitychange", onVisibility);
 
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) onScreen = e.isIntersecting;
+        schedule();
       },
       { rootMargin: "100px" }
     );
@@ -257,15 +256,22 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
       ];
     };
 
-    const tick = (): void => {
-      if (visible && onScreen) {
-        p.uniforms.uT.value = (performance.now() - t0) / 1000;
+    function schedule(): void {
+      cancelAnimationFrame(raf);
+      if (visible && onScreen) raf = requestAnimationFrame(tick);
+    }
+
+    function tick(now: number): void {
+      if (!visible || !onScreen) return;
+      // A decorative background needs only 30fps, including on 120Hz screens.
+      if (now - lastFrame >= 1000 / 30) {
+        lastFrame = now;
+        p.uniforms.uT.value = (now - t0) / 1000;
         sync();
         r.render({ scene });
       }
       raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
+    }
 
     return () => {
       cancelAnimationFrame(raf);
@@ -273,6 +279,8 @@ export function ShaderFlow(props: ShaderFlowProps): ReactNode {
       io.disconnect();
       themeObserver.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
+      geo.remove();
+      p.remove();
       if (gl.canvas.parentElement === el) el.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };

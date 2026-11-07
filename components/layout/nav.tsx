@@ -8,7 +8,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
   useSyncExternalStore,
@@ -128,20 +127,25 @@ export function Nav(): ReactNode {
       : pathname === item.href || pathname.startsWith(`${item.href}/`)
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const list = listRef.current;
-    const activeEl =
-      activeIndex >= 0 ? itemRefs.current[activeIndex] : null;
-    if (!list || !activeEl) {
-      setPillRect(null);
-      return;
-    }
-    const listRect = list.getBoundingClientRect();
-    const itemRect = activeEl.getBoundingClientRect();
-    setPillRect({
-      x: itemRect.left - listRect.left,
-      width: itemRect.width,
-    });
+    const activeEl = activeIndex >= 0 ? itemRefs.current[activeIndex] : null;
+    const measure = () => {
+      if (!list || !activeEl) {
+        setPillRect(null);
+        return;
+      }
+      const listRect = list.getBoundingClientRect();
+      const itemRect = activeEl.getBoundingClientRect();
+      setPillRect({ x: itemRect.left - listRect.left, width: itemRect.width });
+    };
+    const id = requestAnimationFrame(measure);
+    const observer = new ResizeObserver(measure);
+    if (list) observer.observe(list);
+    return () => {
+      cancelAnimationFrame(id);
+      observer.disconnect();
+    };
   }, [activeIndex, pathname]);
 
   useEffect(() => {
@@ -153,13 +157,13 @@ export function Nav(): ReactNode {
   return (
     <nav
       aria-label="Primary"
-      className="fixed left-1/2 top-6 z-50 -translate-x-1/2"
+      className="fixed top-6 left-1/2 z-50 -translate-x-1/2"
     >
-      <div className="flex items-center gap-1 rounded-full bg-background p-1.5 shadow-sm border border-foreground/8">
+      <div className="bg-background border-foreground/8 flex items-center gap-1 rounded-full border p-1.5 shadow-sm">
         <Link
           href="/"
           aria-label="Home"
-          className="focus-ring mr-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-foreground/8 transition-transform hover:scale-105"
+          className="focus-ring ring-foreground/8 mr-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 transition-transform hover:scale-105"
         >
           <Image
             src="/logo.png"
@@ -182,7 +186,7 @@ export function Nav(): ReactNode {
                   : { duration: 0 }
               }
               style={{ left: 0, top: 0, bottom: 0 }}
-              className="absolute rounded-full bg-foreground/5 ring-1 ring-foreground/8"
+              className="bg-foreground/5 ring-foreground/8 absolute rounded-full ring-1"
             />
           )}
           {NAV_ITEMS.map((item, index) => {
@@ -203,8 +207,8 @@ export function Nav(): ReactNode {
                   <span
                     className={
                       isActive
-                        ? "relative z-10 text-foreground"
-                        : "relative z-10 text-foreground/60 hover:text-foreground"
+                        ? "text-foreground relative z-10"
+                        : "text-foreground/60 hover:text-foreground relative z-10"
                     }
                   >
                     {item.label}

@@ -2,6 +2,7 @@
 
 import { RotateCcw } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEnhancedVisuals } from "@/lib/rendering-preferences";
 
 type Chip = {
   label: string;
@@ -38,12 +39,29 @@ type ChipState = {
 };
 
 export function Stack(): ReactNode {
+  const enhanced = useEnhancedVisuals();
+  const visibilityRef = useRef<HTMLDivElement>(null);
+  const [nearViewport, setNearViewport] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const measureRef = useRef<HTMLDivElement | null>(null);
   const chipRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [resetKey, setResetKey] = useState(0);
 
   useEffect(() => {
+    const element = visibilityRef.current;
+    if (!enhanced || !element) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setNearViewport(entry?.isIntersecting ?? false);
+      },
+      { rootMargin: "100px" }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [enhanced]);
+
+  useEffect(() => {
+    if (!enhanced || !nearViewport) return;
     const container = containerRef.current;
     const measure = measureRef.current;
     if (!container || !measure) return;
@@ -75,7 +93,7 @@ export function Stack(): ReactNode {
       let width = container.clientWidth;
       let height = container.clientHeight;
 
-      const engine = Engine.create();
+      const engine = Engine.create({ enableSleeping: true });
       engine.gravity.y = 1;
       const world = engine.world;
 
@@ -125,16 +143,16 @@ export function Stack(): ReactNode {
 
       const mouse = Mouse.create(container);
 
-      const wheelTarget = mouse.element as HTMLElement & {
-        mousewheel?: EventListener;
-      };
-      if (wheelTarget.mousewheel) {
-        wheelTarget.removeEventListener("wheel", wheelTarget.mousewheel);
-        wheelTarget.removeEventListener(
-          "DOMMouseScroll",
-          wheelTarget.mousewheel
-        );
-      }
+      const mouseHandlers = mouse as typeof mouse &
+        Record<
+          "mousemove" | "mousedown" | "mouseup" | "mousewheel",
+          EventListener
+        >;
+      // Keep page scrolling native, including on laptops with touchscreens.
+      container.removeEventListener("wheel", mouseHandlers.mousewheel);
+      container.removeEventListener("touchmove", mouseHandlers.mousemove);
+      container.removeEventListener("touchstart", mouseHandlers.mousedown);
+      container.removeEventListener("touchend", mouseHandlers.mouseup);
 
       const mouseConstraint = MouseConstraint.create(engine, {
         mouse,
@@ -154,9 +172,16 @@ export function Stack(): ReactNode {
       });
 
       const runner = Runner.create();
-      Runner.run(runner, engine);
 
       let raf = 0;
+      function onVisibilityChange(): void {
+        Runner.stop(runner);
+        cancelAnimationFrame(raf);
+        if (!document.hidden) {
+          Runner.run(runner, engine);
+          raf = requestAnimationFrame(tick);
+        }
+      }
       const tick = (): void => {
         for (let i = 0; i < states.length; i++) {
           const s = states[i];
@@ -167,7 +192,8 @@ export function Stack(): ReactNode {
         }
         raf = requestAnimationFrame(tick);
       };
-      raf = requestAnimationFrame(tick);
+      onVisibilityChange();
+      document.addEventListener("visibilitychange", onVisibilityChange);
 
       const onResize = (): void => {
         const newW = container.clientWidth;
@@ -193,8 +219,16 @@ export function Stack(): ReactNode {
 
       cleanup = () => {
         cancelAnimationFrame(raf);
+        document.removeEventListener("visibilitychange", onVisibilityChange);
         ro.disconnect();
         Runner.stop(runner);
+        container.removeEventListener("mousemove", mouseHandlers.mousemove);
+        container.removeEventListener("mousedown", mouseHandlers.mousedown);
+        container.removeEventListener("mouseup", mouseHandlers.mouseup);
+        Mouse.clearSourceEvents(mouse);
+        Events.off(engine, "beforeUpdate");
+        Events.off(mouseConstraint, "startdrag");
+        Events.off(mouseConstraint, "enddrag");
         World.clear(world, false);
         Engine.clear(engine);
       };
@@ -204,60 +238,68 @@ export function Stack(): ReactNode {
       cancelled = true;
       cleanup?.();
     };
-  }, [resetKey]);
+  }, [enhanced, nearViewport, resetKey]);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div ref={visibilityRef} className="flex flex-col gap-3">
       <div className="flex items-center gap-3">
         <h3 className="text-foreground text-[15px] font-semibold tracking-tight">
           Stack
         </h3>
       </div>
 
-      <div className="border-foreground/5 bg-foreground/2 dark:bg-foreground/5 relative h-40 overflow-hidden rounded-4xl border sm:h-64">
-        <button
-          type="button"
-          onClick={() => setResetKey((k) => k + 1)}
-          aria-label="Reset stack"
-          className="focus-ring border-foreground/8 bg-background text-foreground/70 hover:text-foreground absolute top-3 right-3 z-20 inline-flex h-9 w-9 items-center justify-center rounded-xl border transition-colors"
-        >
-          <RotateCcw
-            className="h-4 w-4"
-            strokeWidth={2.25}
+      {enhanced ? (
+        <div className="border-foreground/5 bg-foreground/2 dark:bg-foreground/5 relative h-40 overflow-hidden rounded-4xl border sm:h-64">
+          <button
+            type="button"
+            onClick={() => setResetKey((k) => k + 1)}
+            aria-label="Reset stack"
+            className="focus-ring border-foreground/8 bg-background text-foreground/70 hover:text-foreground absolute top-3 right-3 z-20 inline-flex h-9 w-9 items-center justify-center rounded-xl border transition-colors"
+          >
+            <RotateCcw
+              className="h-4 w-4"
+              strokeWidth={2.25}
+              aria-hidden="true"
+            />
+          </button>
+
+          <div
+            ref={measureRef}
             aria-hidden="true"
-          />
-        </button>
+            className="pointer-events-none invisible absolute top-0 left-0 flex flex-wrap gap-2"
+          >
+            {CHIPS.map((chip) => (
+              <ChipPill key={`m-${chip.label}`} chip={chip} />
+            ))}
+          </div>
 
-        <div
-          ref={measureRef}
-          aria-hidden="true"
-          className="pointer-events-none invisible absolute top-0 left-0 flex flex-wrap gap-2"
-        >
+          <div
+            ref={containerRef}
+            className="absolute inset-0 cursor-grab select-none"
+            style={{ touchAction: "none" }}
+          >
+            {CHIPS.map((chip, i) => (
+              <div
+                key={`${resetKey}-${chip.label}`}
+                ref={(el) => {
+                  chipRefs.current[i] = el;
+                }}
+                data-stack-chip
+                className="pointer-events-none absolute top-0 left-0 will-change-transform"
+                style={{ transform: "translate3d(-9999px, -9999px, 0)" }}
+              >
+                <ChipPill chip={chip} />
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="border-foreground/5 bg-foreground/2 dark:bg-foreground/5 flex flex-wrap gap-3 rounded-4xl border p-5">
           {CHIPS.map((chip) => (
-            <ChipPill key={`m-${chip.label}`} chip={chip} />
+            <ChipPill key={chip.label} chip={chip} />
           ))}
         </div>
-
-        <div
-          ref={containerRef}
-          className="absolute inset-0 cursor-grab select-none"
-          style={{ touchAction: "none" }}
-        >
-          {CHIPS.map((chip, i) => (
-            <div
-              key={`${resetKey}-${chip.label}`}
-              ref={(el) => {
-                chipRefs.current[i] = el;
-              }}
-              data-stack-chip
-              className="pointer-events-none absolute top-0 left-0 will-change-transform"
-              style={{ transform: "translate3d(-9999px, -9999px, 0)" }}
-            >
-              <ChipPill chip={chip} />
-            </div>
-          ))}
-        </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -265,7 +307,7 @@ export function Stack(): ReactNode {
 function ChipPill({ chip }: { chip: Chip }): ReactNode {
   return (
     <div
-      className="dark:ring-1 dark:ring-white/15 inline-flex items-center gap-2 p-1 pr-2 text-[15px] font-medium tracking-tight sm:text-[16px]"
+      className="inline-flex items-center gap-2 p-1 pr-2 text-[15px] font-medium tracking-tight sm:text-[16px] dark:ring-1 dark:ring-white/15"
       style={{
         backgroundColor: chip.bg,
         color: chip.fg,
@@ -282,6 +324,8 @@ function ChipPill({ chip }: { chip: Chip }): ReactNode {
           alt=""
           width={18}
           height={18}
+          loading="lazy"
+          decoding="async"
           className="h-5 w-5"
           draggable={false}
         />

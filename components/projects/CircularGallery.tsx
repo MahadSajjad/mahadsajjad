@@ -250,6 +250,8 @@ class App {
   boundOnTouchDown: (e: MouseEvent | TouchEvent) => void;
   boundOnTouchMove: (e: MouseEvent | TouchEvent) => void;
   boundOnTouchUp: () => void; boundOnKeyDown: (e: KeyboardEvent) => void;
+  boundOnVisibilityChange: () => void;
+  lastFrame = -Infinity;
   isDown: boolean; scroll_position: number; start: number;
 
   constructor(
@@ -269,19 +271,20 @@ class App {
     this.boundOnTouchMove = this.onTouchMove.bind(this);
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     this.boundOnKeyDown = this.onKeyDown.bind(this);
+    this.boundOnVisibilityChange = this.onVisibilityChange.bind(this);
     this.createRenderer(); this.createCamera(); this.createScene(); this.onResize();
     this.createGeometry(); this.createMedias(items, bend, textColor, borderRadius, font, imageScale);
     this.update(); this.addEventListeners();
   }
   createRenderer() {
-    this.renderer = new Renderer({ alpha: true, antialias: true, dpr: Math.min(window.devicePixelRatio || 1, 2) });
+    this.renderer = new Renderer({ alpha: true, antialias: false, dpr: 1, powerPreference: 'low-power' });
     this.gl = this.renderer.gl;
     this.gl.clearColor(0, 0, 0, 0);
     this.container.appendChild(this.gl.canvas);
   }
   createCamera() { this.camera = new Camera(this.gl); this.camera.fov = 45; this.camera.position.z = 20; }
   createScene() { this.scene = new Transform(); }
-  createGeometry() { this.planeGeometry = new Plane(this.gl, { heightSegments: 50, widthSegments: 100 }); }
+  createGeometry() { this.planeGeometry = new Plane(this.gl); }
   createMedias(items?: { image: string; text: string }[], bend = 1, textColor?: string, borderRadius?: number, font?: string, imageScale = 1) {
     const defaultItems = [
       { image: 'https://picsum.photos/seed/1/800/600?grayscale', text: 'Bridge' },
@@ -338,7 +341,17 @@ class App {
     this.viewport = { width, height };
     this.medias?.forEach(media => media.onResize({ screen: this.screen, viewport: this.viewport }));
   }
-  update() {
+  onVisibilityChange() {
+    window.cancelAnimationFrame(this.raf);
+    if (!document.hidden) this.update();
+  }
+  update(now = 0) {
+    if (document.hidden) return;
+    if (now - this.lastFrame < 1000 / 30) {
+      this.raf = window.requestAnimationFrame(this.update.bind(this));
+      return;
+    }
+    this.lastFrame = now;
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     this.medias?.forEach(media => media.update(this.scroll, direction));
@@ -347,30 +360,33 @@ class App {
     this.raf = window.requestAnimationFrame(this.update.bind(this));
   }
   addEventListeners() {
+    document.addEventListener('visibilitychange', this.boundOnVisibilityChange);
     window.addEventListener('resize', this.boundOnResize);
-    window.addEventListener('wheel', this.boundOnWheel);
-    window.addEventListener('mousedown', this.boundOnTouchDown);
+    this.container.addEventListener('wheel', this.boundOnWheel, { passive: true });
+    this.container.addEventListener('mousedown', this.boundOnTouchDown);
     window.addEventListener('mousemove', this.boundOnTouchMove);
     window.addEventListener('mouseup', this.boundOnTouchUp);
-    window.addEventListener('touchstart', this.boundOnTouchDown);
-    window.addEventListener('touchmove', this.boundOnTouchMove);
-    window.addEventListener('touchend', this.boundOnTouchUp);
+    this.container.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
+    this.container.addEventListener('touchmove', this.boundOnTouchMove, { passive: true });
+    this.container.addEventListener('touchend', this.boundOnTouchUp);
     this.container.addEventListener('keydown', this.boundOnKeyDown);
   }
   destroy() {
     window.cancelAnimationFrame(this.raf);
+    document.removeEventListener('visibilitychange', this.boundOnVisibilityChange);
     window.removeEventListener('resize', this.boundOnResize);
-    window.removeEventListener('wheel', this.boundOnWheel);
-    window.removeEventListener('mousedown', this.boundOnTouchDown);
+    this.container.removeEventListener('wheel', this.boundOnWheel);
+    this.container.removeEventListener('mousedown', this.boundOnTouchDown);
     window.removeEventListener('mousemove', this.boundOnTouchMove);
     window.removeEventListener('mouseup', this.boundOnTouchUp);
-    window.removeEventListener('touchstart', this.boundOnTouchDown);
-    window.removeEventListener('touchmove', this.boundOnTouchMove);
-    window.removeEventListener('touchend', this.boundOnTouchUp);
+    this.container.removeEventListener('touchstart', this.boundOnTouchDown);
+    this.container.removeEventListener('touchmove', this.boundOnTouchMove);
+    this.container.removeEventListener('touchend', this.boundOnTouchUp);
     if (this.renderer?.gl?.canvas?.parentNode) {
       this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas);
     }
     this.container.removeEventListener('keydown', this.boundOnKeyDown);
+    this.gl.getExtension('WEBGL_lose_context')?.loseContext();
   }
 }
 

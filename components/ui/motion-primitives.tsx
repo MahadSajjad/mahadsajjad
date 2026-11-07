@@ -1,53 +1,75 @@
 "use client";
 
-import { motion } from "motion/react";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import { useEnhancedVisuals } from "@/lib/rendering-preferences";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
-
-export function FadeIn({
-  children,
-  delay = 0,
-  duration = 0.8,
-  className,
-}: {
+type RevealProps = {
   children: ReactNode;
   delay?: number;
   duration?: number;
   className?: string;
-}): ReactNode {
+};
+
+function Reveal({
+  children,
+  delay = 0,
+  duration = 0.55,
+  className,
+  scale = false,
+}: RevealProps & { scale?: boolean }): ReactNode {
+  const ref = useRef<HTMLDivElement>(null);
+  const enhanced = useEnhancedVisuals();
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || !enhanced) return;
+    let animation: Animation | undefined;
+    element.classList.add("reveal-pending");
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        observer.disconnect();
+        animation = element.animate(
+          [
+            {
+              opacity: 0,
+              transform: scale ? "scale(0.97)" : "translateY(12px)",
+            },
+            { opacity: 1, transform: "none" },
+          ],
+          {
+            duration: duration * 1000,
+            delay: delay * 1000,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "backwards",
+          }
+        );
+        element.classList.remove("reveal-pending");
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      animation?.cancel();
+      element.classList.remove("reveal-pending");
+    };
+  }, [enhanced, delay, duration, scale]);
+
+  // Content is visible in the server HTML and on mobile, without waiting for JS.
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration, delay, ease: EASE }}
-      className={className}
-    >
+    <div ref={ref} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-export function ScaleUnblur({
-  children,
-  delay = 0,
-  duration = 1,
-  className,
-}: {
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  className?: string;
-}): ReactNode {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.7, filter: "blur(20px)" }}
-      animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-      transition={{ duration, delay, ease: EASE }}
-      style={{ transformOrigin: "center" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+export function FadeIn(props: RevealProps): ReactNode {
+  return <Reveal {...props} />;
+}
+
+export function ScaleUnblur(props: RevealProps): ReactNode {
+  return <Reveal {...props} scale />;
 }
