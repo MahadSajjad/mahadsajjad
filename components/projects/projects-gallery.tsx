@@ -14,6 +14,7 @@ import fashionThread from './images/fashionthread.png';
 import footLandShoes from './images/FootLandShoes.png';
 import getSetProperties from './images/getsetproperties.png';
 import metafessional from './images/Metafessional.png';
+import metroMetal from './images/metro-metal.webp';
 import nutrista from './images/nutrista.png';
 import pos from './images/pos.png';
 import transiqi from './images/transiqi.png';
@@ -29,6 +30,7 @@ function galleryImage(image: StaticImageData): string {
 }
 
 const GALLERY_ITEMS = [
+  { image: galleryImage(metroMetal), text: 'Metro Metal' },
   { image: galleryImage(emiratesFront), text: 'Emirates Front' },
   { image: galleryImage(zenvix), text: 'Zenvix' },
   { image: galleryImage(footLandShoes), text: 'Foot Land Shoes' },

@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Globe, HardHat, Moon, ScanBarcode, ShoppingBag, Salad, Sparkles, Truck, } from "lucide-react";
+import { ArrowRight, Building2, Globe, HardHat, Moon, Recycle, ScanBarcode, ShoppingBag, Salad, Sparkles, Truck, } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
@@ -13,6 +13,7 @@ import fashionThread from "./images/fashionthread.png";
 import footLandShoes from "./images/FootLandShoes.png";
 import getSetProperties from "./images/getsetproperties.png";
 import metafessional from "./images/Metafessional.png";
+import metroMetal from "./images/metro-metal.webp";
 import nutrista from "./images/nutrista.png";
 import pos from "./images/pos.png";
 import transiqi from "./images/transiqi.png";
@@ -33,6 +34,18 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+  {
+    id: "metro-metal",
+    icon: Recycle,
+    iconLabel: "Metro Metal",
+    title: "A lead-generation website for a Sydney scrap metal business.",
+    description:
+      "Built a modern website for a scrap metal business in Sydney, NSW, Australia, with scroll-triggered animations and a Supabase-backed admin dashboard.",
+    meta: "React · Tailwind CSS · Supabase",
+    image: metroMetal,
+    imageAlt: "Metro Metal scrap metal recycling website shown on a laptop",
+    href: "https://metrometal.com.au/",
+  },
   {
     id: "emirates-front",
     icon: HardHat,
@@ -58,18 +71,6 @@ const PROJECTS: Project[] = [
     href: "https://alfajrcontractingco.com/",
   },
   {
-    id: "pos",
-    icon: ScanBarcode,
-    iconLabel: "POS System",
-    title: "A point-of-sale system built for inventory management.",
-    description:
-      "Core inventory management, single and multiple product returns, and expense tracking.",
-    meta: "React · Bootstrap · Supabase",
-    image: pos,
-    imageAlt: "POS system dashboard",
-    href: "https://fmse.vercel.app/",
-  },
-  {
     id: "the-elegance-bed-company",
     icon: ShoppingBag,
     iconLabel: "The Elegance Bed Company",
@@ -81,6 +82,19 @@ const PROJECTS: Project[] = [
     imageAlt: "The Elegance Bed Company Shopify storefront shown on a laptop",
     href: "https://theelegancebedcompany.co.uk/",
   },
+  {
+    id: "pos",
+    icon: ScanBarcode,
+    iconLabel: "POS System",
+    title: "A point-of-sale system built for inventory management.",
+    description:
+      "Core inventory management, single and multiple product returns, and expense tracking.",
+    meta: "React · Bootstrap · Supabase",
+    image: pos,
+    imageAlt: "POS system dashboard",
+    href: "https://fmse.vercel.app/",
+  },
+
 
   {
     id: "zenvix",
