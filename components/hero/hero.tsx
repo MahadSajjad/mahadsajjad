@@ -9,29 +9,33 @@ const PORTRAIT_SRC = "/mahad.webp";
 export function Hero(): ReactNode {
   return (
     <section className="relative w-full" aria-labelledby="hero-heading">
-      <div className="hero-layout mx-auto grid w-full max-w-275 grid-cols-1 content-center items-center gap-6 px-6 sm:px-10 md:grid-cols-2 md:gap-8">
-        <FadeIn className="order-2 flex flex-col gap-4 md:order-none">
-          <p className="text-foreground text-[22px] leading-tight font-medium tracking-tight sm:text-[26px] lg:text-[30px]">
-            I&rsquo;m Mahad Sajjad
-          </p>
+      <div className="hero-layout mx-auto grid w-full max-w-275 items-center gap-x-4 gap-y-6 px-6 sm:px-10 md:gap-8">
+        <div className="hero-copy">
+          <FadeIn className="hero-intro flex min-w-0 flex-col gap-3 md:gap-4">
+            <p className="text-foreground text-[clamp(0.9375rem,4vw,1.625rem)] leading-tight font-medium tracking-tight md:text-[26px] lg:text-[30px]">
+              I&rsquo;m Mahad Sajjad
+            </p>
 
-          <h1
-            id="hero-heading"
-            className="text-foreground flex flex-col text-[clamp(1.75rem,8.5vw,2.75rem)] leading-[1.05] font-medium tracking-tight md:text-[clamp(2rem,4.2vw,3.65rem)]"
-          >
-            <span>Full-Stack Web</span>
-            <span>&amp; App Developer</span>
-          </h1>
+            <h1
+              id="hero-heading"
+              className="text-foreground flex flex-col text-[clamp(1.25rem,5.7vw,2.5rem)] leading-[1.1] font-medium tracking-tight md:text-[clamp(2rem,4.2vw,3.65rem)] md:leading-[1.05]"
+            >
+              <span>Full-Stack Web</span>
+              <span>&amp; App Developer</span>
+            </h1>
+          </FadeIn>
 
-          <p className="text-foreground/65 max-w-[34ch] text-[18px] leading-[1.4] tracking-tight sm:text-[20px] lg:text-[22px]">
-            A full-stack developer who builds products end-to-end, from database
-            to deployment.
-          </p>
+          <FadeIn className="hero-details flex min-w-0 flex-col gap-4">
+            <p className="text-foreground/65 max-w-[34ch] text-[18px] leading-[1.4] tracking-tight sm:text-[20px] lg:text-[22px]">
+              A full-stack developer who builds products end-to-end, from
+              database to deployment.
+            </p>
 
-          <HeroCtas />
-        </FadeIn>
+            <HeroCtas />
+          </FadeIn>
+        </div>
 
-        <ScaleUnblur className="order-1 flex justify-start md:order-none md:justify-end">
+        <ScaleUnblur className="hero-visual flex min-w-0 justify-end">
           <div className="hero-portrait relative aspect-square">
             <TiltedCard
               imageSrc={PORTRAIT_SRC}
