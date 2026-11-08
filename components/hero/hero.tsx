@@ -31,7 +31,7 @@ export function Hero(): ReactNode {
           <HeroCtas />
         </FadeIn>
 
-        <ScaleUnblur className="order-1 flex justify-center md:order-none md:justify-end">
+        <ScaleUnblur className="order-1 flex justify-start md:order-none md:justify-end">
           <div className="hero-portrait relative aspect-square">
             <TiltedCard
               imageSrc={PORTRAIT_SRC}
