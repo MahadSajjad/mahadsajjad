@@ -63,6 +63,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.hero-layout {
+  /* Stable viewport units avoid resizing as mobile browser controls move. */
+  min-height: 100svh;
+  padding-top: clamp(7rem, 14svh, 9rem);
+  padding-bottom: clamp(2rem, 5svh, 3rem);
+}
+
+.hero-portrait {
+  width: min(72vw, 30svh, 18rem);
+}
+
+@media (min-width: 768px) {
+  .hero-layout {
+    /* Let content grow on short screens, and cap whitespace on tall screens. */
+    min-height: min(100svh, 56rem);
+    padding-top: clamp(7rem, 16svh, 11rem);
+    padding-bottom: clamp(2rem, 8svh, 6rem);
+  }
+
+  .hero-portrait {
+    width: min(100%, 50svh, 26.25rem);
+  }
+}
+
 .skip-to-content {
   position: absolute;
   left: -9999px;

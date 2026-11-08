@@ -1,4 +1,11 @@
-import { Boxes, LayoutDashboard, ScanBarcode, Server, Sparkles, Gauge, } from "lucide-react";
+import {
+  Boxes,
+  LayoutDashboard,
+  ScanBarcode,
+  Server,
+  Sparkles,
+  Gauge,
+} from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 
 import { TechLoop } from "@/components/services/tech-loop";
@@ -59,11 +66,11 @@ export function Services(): ReactNode {
       <FadeIn className="flex flex-col items-center gap-4 text-center">
         <h2
           id="services-heading"
-          className="font-serif text-[2.25rem] font-medium leading-[1.05] tracking-tight text-foreground sm:text-[2.75rem]"
+          className="text-foreground font-serif text-[2.25rem] leading-[1.05] font-medium tracking-tight sm:text-[2.75rem]"
         >
           What I Do
         </h2>
-        <p className="max-w-[42ch] text-[18px] leading-[1.4] tracking-tight text-foreground/65 sm:text-[20px]">
+        <p className="text-foreground/65 max-w-[42ch] text-[18px] leading-[1.4] tracking-tight sm:text-[20px]">
           I take products from an idea to something real people use, owning
           every decision along the way.
         </p>
@@ -77,12 +84,7 @@ export function Services(): ReactNode {
         ))}
       </div>
 
-      <FadeIn delay={0.1} className="mt-14">
-        <p className="mb-6 text-center text-[12px] font-medium uppercase tracking-wider text-foreground/40">
-          Tools I build with
-        </p>
-        <TechLoop />
-      </FadeIn>
+      <TechLoop />
     </section>
   );
 }
@@ -90,18 +92,18 @@ export function Services(): ReactNode {
 function ServiceCard({ service }: { service: Service }): ReactNode {
   const { icon: Icon } = service;
   return (
-    <div className="flex h-full flex-col gap-4 rounded-4xl border border-foreground/5 bg-foreground/2 p-6 transition-colors hover:bg-foreground/4 sm:p-7 dark:bg-foreground/5 dark:hover:bg-foreground/8">
+    <div className="border-foreground/5 bg-foreground/2 hover:bg-foreground/4 dark:bg-foreground/5 dark:hover:bg-foreground/8 flex h-full flex-col gap-4 rounded-4xl border p-6 transition-colors sm:p-7">
       <span
         aria-hidden="true"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-foreground/8 bg-background text-foreground/80"
+        className="border-foreground/8 bg-background text-foreground/80 inline-flex h-11 w-11 items-center justify-center rounded-2xl border"
       >
         <Icon className="h-5 w-5" strokeWidth={2} />
       </span>
       <div className="flex flex-col gap-2">
-        <h3 className="text-[18px] font-semibold tracking-tight text-foreground sm:text-[19px]">
+        <h3 className="text-foreground text-[18px] font-semibold tracking-tight sm:text-[19px]">
           {service.title}
         </h3>
-        <p className="text-[14px] leading-[1.55] tracking-tight text-foreground/60 sm:text-[15px]">
+        <p className="text-foreground/60 text-[14px] leading-[1.55] tracking-tight sm:text-[15px]">
           {service.description}
         </p>
       </div>

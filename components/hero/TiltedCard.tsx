@@ -133,7 +133,7 @@ export default function TiltedCard({
           src={imageSrc}
           alt={altText}
           fill
-          sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
+          sizes="(min-width: 768px) 420px, (min-width: 400px) 288px, 72vw"
           preload
           className={`absolute top-0 left-0 rounded-[15px] object-cover ${imageClassName}`}
         />

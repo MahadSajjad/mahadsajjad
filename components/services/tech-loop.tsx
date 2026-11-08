@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useSyncExternalStore } from "react";
 import type { ComponentType, ReactNode } from "react";
 
-import LogoLoopBase from "@/components/ui/logo-loop";
+import { FadeIn } from "@/components/ui/motion-primitives";
 
 type TechLogo = {
   src: string;
@@ -26,7 +26,28 @@ type LogoLoopProps = {
   renderItem?: (item: TechLogo, key: React.Key) => ReactNode;
 };
 
-const LogoLoop = LogoLoopBase as ComponentType<LogoLoopProps>;
+// Do not mount the animation or start its frame loop on mobile devices.
+const LogoLoop = lazy(() =>
+  import("@/components/ui/logo-loop").then((module) => ({
+    default: module.default as ComponentType<LogoLoopProps>,
+  }))
+);
+
+const TOOLS_QUERY = "(min-width: 768px) and (hover: hover) and (pointer: fine)";
+
+function subscribeToToolsViewport(callback: () => void): () => void {
+  const query = window.matchMedia(TOOLS_QUERY);
+  query.addEventListener("change", callback);
+  return () => query.removeEventListener("change", callback);
+}
+
+function getToolsViewport(): boolean {
+  return window.matchMedia(TOOLS_QUERY).matches;
+}
+
+function getServerToolsViewport(): boolean {
+  return false;
+}
 
 // Simple Icons rendered in black + dark:invert so the strip stays monochrome
 // in both themes, matching the site's minimal aesthetic.
@@ -56,40 +77,45 @@ const TECH_LOGOS: TechLogo[] = SLUGS.map(({ slug, title }) => ({
 const LOGO_HEIGHT = 44;
 
 export function TechLoop(): ReactNode {
-  const [isMobile, setIsMobile] = useState(false);
+  const showTools = useSyncExternalStore(
+    subscribeToToolsViewport,
+    getToolsViewport,
+    getServerToolsViewport
+  );
 
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 639px)");
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
+  if (!showTools) return null;
 
   return (
-    <LogoLoop
-      logos={TECH_LOGOS}
-      speed={40}
-      direction="left"
-      logoHeight={LOGO_HEIGHT}
-      gap={isMobile ? 28 : 64}
-      hoverSpeed={0}
-      scaleOnHover
-      fadeOut
-      ariaLabel="Tech stack I work with"
-      renderItem={(item: TechLogo) => (
-        <img
-          src={item.src}
-          alt={item.alt}
-          title={item.title}
-          width={LOGO_HEIGHT}
-          height={LOGO_HEIGHT}
-          loading="lazy"
-          decoding="async"
-          draggable={false}
-          className="h-[var(--logoloop-logoHeight)] w-[var(--logoloop-logoHeight)] object-contain opacity-50 transition-[opacity,transform] duration-300 group-hover/item:scale-110 group-hover/item:opacity-100 dark:invert"
+    <FadeIn delay={0.1} className="mt-14 hidden md:block">
+      <p className="text-foreground/40 mb-6 text-center text-[12px] font-medium tracking-wider uppercase">
+        Tools I build with
+      </p>
+      <Suspense fallback={null}>
+        <LogoLoop
+          logos={TECH_LOGOS}
+          speed={40}
+          direction="left"
+          logoHeight={LOGO_HEIGHT}
+          gap={64}
+          hoverSpeed={0}
+          scaleOnHover
+          fadeOut
+          ariaLabel="Tech stack I work with"
+          renderItem={(item: TechLogo) => (
+            <img
+              src={item.src}
+              alt={item.alt}
+              title={item.title}
+              width={LOGO_HEIGHT}
+              height={LOGO_HEIGHT}
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+              className="h-[var(--logoloop-logoHeight)] w-[var(--logoloop-logoHeight)] object-contain opacity-50 transition-[opacity,transform] duration-300 group-hover/item:scale-110 group-hover/item:opacity-100 dark:invert"
+            />
+          )}
         />
-      )}
-    />
+      </Suspense>
+    </FadeIn>
   );
 }
